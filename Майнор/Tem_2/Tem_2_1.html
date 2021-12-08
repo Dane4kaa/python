@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 4000px">
+
+
+		<aside style="height: 4000px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" class="active">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+	</aside>
+		<div id="main1">
+<h1 id="h11">Логический тип данных. Логические операции </h1>
+<br><br>
+<h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">	Логический тип данных </a></p>
+<p>•	<a href="#spiski">Логические операторы</a></p>
+<p>•	<a href="#kor">Логические операции</a></p>
+<p>•	<a href="#str">Сложные логические выражения</a></p>
+
+<br>
+
+<p><a style="color:#4D4D4D" name="chisla">Логический тип данных</a> (тип bool) также называют булевым. У этого типа всего два возможных значения: True (правда) и False (ложь).</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span> a = True</p>
+<p><span class="orange">>>></span> type(a)</p>
+<p>&lt;class 'bool'&gt;</p>
+<p><span class="orange">>>></span> b = False</p>
+<p><span class="orange">>>></span> type(b)</p>
+<p>&lt;class 'bool'&gt;</p>
+</div>
+<p>Здесь переменной a было присвоено значение True, после чего с помощью встроенной в Python функции type() проверен ее тип. Интерпретатор сообщил, что это переменная класса bool. Понятия "класс" и "тип данных" в данном случае одно и то же. Переменная b также связана с булевым значением.
+<br>В программировании False обычно приравнивают к нулю, а True – к единице. Чтобы в этом убедиться, можно преобразовать булево значение к целочисленному типу:
+</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> int(True)</p>
+<p>1</p>
+<p><span class="orange">>>></span> int(False)</p>
+<p>0</p>
+</div>
+<p>Возможно и обратное. Можно преобразовать какое-либо значение к булевому типу:</p>
+<div class="prog" style="height: 280px">
+<p><span class="orange">>>></span> bool(3.4)</p>
+<p>True</p>
+<p><span class="orange">>>></span> bool(-150)</p>
+<p>True</p>
+<p><span class="orange">>>></span> bool(0)</p>
+<p>False</p>
+<p><span class="orange">>>></span> bool(' ')</p>
+<p>True</p>
+<p><span class="orange">>>></span> bool('')</p>
+<p>False</p>
+</div>
+<p>И здесь работает правило: всё, что не 0 и не пустота, является правдой.</p>
+
+
+<br><h2><a style="color:#4D4D4D" name="spiski">Логические операторы</a></h2><br>
+<p>Говоря на естественном языке (например, русском) мы обозначаем сравнения словами "равно", "больше", "меньше". В языках программирования используются специальные знаки, подобные тем, которые используются в математике: &gt; (больше),  &lt; (меньше),  &lt;= (больше или равно),  &lt;= (меньше или равно), == (равно), != (не равно).</p>
+<p>Не путайте операцию присваивания значения переменной, обозначаемую в языке Python одиночным знаком "равно", и операцию сравнения (два знака "равно"). Присваивание и сравнение – разные операции.</p>
+<div class="prog" style="height: 390px">
+<p><span class="orange">>>></span>  a = 10</p>
+<p><span class="orange">>>></span>  b = 5</p>
+<p><span class="orange">>>></span>  a + b > 14</p>
+<p>True</p>
+<p><span class="orange">>>></span>  a &lt; 14 - b</p>
+<p>False</p>
+<p><span class="orange">>>></span>  a &gt;= b + 5</p>
+<p>True</p>
+<p><span class="orange">>>></span>  a != b</p>
+<p>True</p>
+<p><span class="orange">>>></span>  a == b</p>
+<p><span class="orange">False</span></p>
+<p><span class="orange">>>></span>  c = a == b</p>
+<p><span class="orange">>>></span>  a, b, c</p>
+<p>(10, 5, False)</p>
+</div>
+<p>В данном примере выражение c = a == b состоит из двух подвыражений. Сначала происходит сравнение (==) переменных a и b. После этого результат логической операции присваивается переменной c. Выражение a, b, c просто выводит значения переменных на экран.</p>
+
+<br><h2><a style="color:#4D4D4D" name="kor">Логические операции</a></h2><br>
+<p>•	! — отрицание</p>
+<p>•	==, != — сравнения</p>
+<p>•	& — И</p>
+<p>•	| — ИЛИ</p>
+<p>•	^ — исключающее ИЛИ</p>
+<p>•	&& — conditional (обусловленное) И</p>
+<p>•	|| — conditional (обусловленное) ИЛИ</p>
+
+
+<br><h2><a style="color:#4D4D4D" name="str"> Сложные логические выражения</a> </h2><br>
+<p>Логические выражения типа kByte >= 1023 являются простыми, так как в них выполняется только одна логическая операция. Однако, на практике нередко возникает необходимость в более сложных выражениях. Может понадобиться получить ответа "Да" или "Нет" в зависимости от результата выполнения двух простых выражений. Например, "на улице идет снег или дождь", "переменная news больше 12 и меньше 20".</p>
+<br><p>В таких случаях используются специальные операторы, объединяющие два и более простых логических выражения. Широко используются два оператора – так называемые логические И (and) и ИЛИ (or).</p>
+<br><p>Чтобы получить True при использовании оператора and, необходимо, чтобы результаты обоих простых выражений, которые связывает данный оператор, были истинными. Если хотя бы в одном случае результатом будет False, то и все сложное выражение будет ложным.</p>
+<br><p>Чтобы получить True при использовании оператора or, необходимо, чтобы результат хотя бы одного простого выражения, входящего в состав сложного, был истинным. В случае оператора or сложное выражение становится ложным лишь тогда, когда ложны оба составляющие его простые выражения.</p>
+<br><p>Допустим, переменной x было присвоено значение 8 (x = 8), переменной y присвоили 13 (y = 13). Логическое выражение y &lt; 15 and x &gt; 8 будет выполняться следующим образом. Сначала выполнится выражение y &lt; 15. Его результатом будет True. Затем выполнится выражение x &gt; 8. Его результатом будет False. Далее выражение сведется к True and False, что вернет False.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> x = 8</p>
+<p><span class="orange">>>></span> y = 13</p>
+<p><span class="orange">>>></span> y &lt; 15 and x &gt; 8</p>
+<p>False</p>
+</div>
+<p>Если бы мы записали выражение так: x &gt; 8 and y &lt; 15, то оно также вернуло бы False. Однако сравнение y &lt; 15 не выполнялось бы интерпретатором, так как его незачем выполнять. Ведь первое простое логическое выражение (x &gt; 8) уже вернуло ложь, которая, в случае оператора and, превращает все выражение в ложь.
+<br><br>В случае с оператором or второе простое выражение проверяется, если первое вернуло ложь, и не проверяется, если уже первое вернуло истину. Так как для истинности всего выражения достаточно единственного True, неважно по какую сторону от or оно стоит.</p>
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span> y &lt; 15 or x &gt; 8</p>
+<p>True</p>
+</div>
+<p>В языке Python есть еще унарный логический оператор not, т. е. отрицание. Он превращает правду в ложь, а ложь в правду. Унарный он потому, что применяется к одному выражению, стоящему после него, а не справа и слева от него как в случае бинарных and и or.</p>
+<div class="prog" style="height: 80px">
+	<p><span class="orange">>>></span> not y &lt; 15</p>
+<p>False</p>
+</div>
+<p>Здесь у &lt; 15 возвращает True. Отрицая это, мы получаем False.</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span> a = 5</p>
+<p><span class="orange">>>></span> b = 0</p>
+<p><span class="orange">>>></span> not a</p>
+<p>False</p>
+<p><span class="orange">>>></span> not b</p>
+<p>True</p>
+</div>
+<p>Число 5 трактуется как истина, отрицание истины дает ложь. Ноль приравнивается к False. Отрицание False дает True.</p>
+<br><br>
+<h2>Практическая работа</h2>
+<p>Присвойте двум переменным любые числовые значения.</p>
+
+<p>Используя переменные из п. 1, с помощью оператора and составьте два сложных логических выражения, одно из которых дает истину, другое – ложь.</p>
+
+<p>Аналогично выполните п. 2, но уже с оператором or.</p>
+
+<p>Попробуйте использовать в логических выражениях переменные строкового типа. Объясните результат.</p>
+
+<p>Напишите программу, которая запрашивала бы у пользователя два числа и выводила бы True или False в зависимости от того, больше первое число второго или нет.</p><br><br>
+<br><p>Источник: <a  target="_blank" href="https://younglinux.info/python/operators.php">https://younglinux.info/python/operators.php</a></p>
+<br><p>Подробнее: <a  target="_blank" href="https://foxford.ru/wiki/informatika/logicheskiy-tip-dannyh-i-logicheskie-vyrazheniya-v-java">https://foxford.ru/wiki/informatika/logicheskiy-tip-dannyh-i-logicheskie-vyrazheniya-v-java</a></p>
+
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css">
+<link rel="Stylesheet" type="text/css" href="Tem_5.css">
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 1840px">
+
+
+		<aside style="height: 1840px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html" class="active">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+
+
+	</aside>
+		<div id="main1">
+<h1><span>Множества</span> </h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">Что такое множество? </a></p>
+<p>•<a href="#spiski">Операции с множествами</a></p>
+
+<br><h2><a style="color:#4D4D4D" name="chisla">Что такое множество?</a></h2>
+<br><p>Множество в <span class="pink">python</span> - "контейнер", содержащий не повторяющиеся элементы в случайном порядке.
+Создаём множества:</p>
+<div class="prog" style="height: 420px">
+<p><span class="orange">>>></span>  a = set()</p>
+<p><span class="orange">>>></span>  a</p>
+<p>set()</p>
+<p><span class="orange">>>></span>  a = set('hello')</p>
+<p><span class="orange">>>></span>  a</p>
+<p>{'h', 'o', 'l', 'e'}</p>
+<p><span class="orange">>>></span> a = {'a', 'b', 'c', 'd'}</p>
+<p><span class="orange">>>></span> a</p>
+<p>{'b', 'c', 'a', 'd'}</p>
+<p><span class="orange">>>></span>  a = {i ** 2 for i in range(10)}
+<p><span class="grey"> # генератор множеств</span></p>
+<p><span class="orange">>>></span>  a</p>
+<p>{0, 1, 4, 81, 64, 9, 16, 49, 25, 36}</p>
+<p><span class="orange">>>></span>  a = {}
+<p> <span class="grey"># А так нельзя!</span></p>
+<p><span class="orange">>>></span>  type(a)</p>
+<p>class 'dict'</p>
+</div>
+<br><p>Как видно из примера, множества имеет тот же литерал, что и словарь, но пустое множество с помощью литерала создать нельзя.
+Множества удобно использовать для удаления повторяющихся элементов:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span>  words = ['hello', 'daddy', 'hello', 'mum']</p>
+<p><span class="orange">>>></span>  set(words)</p>
+<p>{'hello', 'daddy', 'mum'}</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="spiski">Операции с множествами</a></h2>
+<div class="spisok" style="height: 320px">
+<p>•<span class="opredelenia">	len(s)</span> - число элементов в множестве (размер множества).</p>
+<p>•<span class="opredelenia">	x in s </span>- принадлежит ли x множеству s.</p>
+<p>•<span class="opredelenia">	set.isdisjoint(other)</span> - истина, если set и other не имеют общих элементов.</p>
+<p>•<span class="opredelenia">	set == other </span>- все элементы set принадлежат other, все элементы other принадлежат set.</p>
+<p>•<span class="opredelenia">	set.issubset(other) или set &lt;= other</span> - все элементы set принадлежат other.</p>
+<p>•<span class="opredelenia">	set.union(other, ...) или set | other | ...</span> - объединение нескольких множеств.</p>
+<p>•<span class="opredelenia">	set.issuperset(other) или set >= other </span>- аналогично.</p>
+<p>•<span class="opredelenia">	set.intersection(other, ...) или set & other &</span> ... - пересечение.</p>
+<p>•<span class="opredelenia">	set.difference(other, ...) или set - other -</span> ... - множество из всех элементов set, не принадлежащие ни одному из other.</p>
+<p>•<span class="opredelenia">	set.symmetric_difference(other); set ^ other</span>- множество из элементов, встречающихся в одном множестве, но не встречающиеся в обоих.</p>
+<p>•<span class="opredelenia">	set.copy()</span> - копия множества.</p>
+</div>
+<p>И операции, непосредственно изменяющие множество:</p>
+<div class="spisok" style="height: 320px">
+<p>•<span class="opredelenia">	set.update(other, ...); set |= other | ...</span> - объединение.</p>
+<p>•<span class="opredelenia">	set.intersection_update(other, ...); set &#38;= other & ...</span> - пересечение.</p>
+<p>•<span class="opredelenia">	set.difference_update(other, ...); set -= other | ... </span>- вычитание.</p>
+<p>•<span class="opredelenia">	set.symmetric_difference_update(other); set ^= other</span> - множество из элементов, встречающихся в одном множестве, но не встречающиеся в обоих.</p>
+<p>•<span class="opredelenia">	set.add(elem)</span> - добавляет элемент в множество.</p>
+<p>•<span class="opredelenia">	set.remove(elem)</span> - удаляет элемент из множества. KeyError, если такого элемента не существует.</p>
+<p>•<span class="opredelenia">	set.discard(elem)</span> - удаляет элемент, если он находится в множестве.</p>
+<p>•<span class="opredelenia">	set.pop()</span> - удаляет первый элемент из множества. Так как множества не упорядочены, нельзя точно сказать, какой элемент будет первым.</p>
+<p>•<span class="opredelenia">	set.clear()</span> - очистка множества.</p>
+</div>
+<br><p>Источник: <a target="_blank" href="
+https://pythonworld.ru/tipy-dannyx-v-python/mnozhestva-set-i-frozenset.html">https://pythonworld.ru/tipy-dannyx-v-python/mnozhestva-set-i-frozenset.html
+</a></p>
+</div>
+	</article>
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

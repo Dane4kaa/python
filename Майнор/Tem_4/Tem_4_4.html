@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_4.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 3500px">
+
+
+		<aside style="height: 3500px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html" class="active">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+<h1><span>Функции. Структура, особенности</span> </h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">Создание функции </a></p>
+<p>•<a href="#spiski">Вызов функции</a></p>
+<p>•<a href="#kor">Аргументы функции в Python</a></p>
+<p>•<a href="#str">Обязательные аргументы функции</a></p>
+<p>•<a href="#mnozh">Аргументы - ключевые слова</a></p>
+<p>•<a href="#slovari">Аргументы, заданные по-умолчанию</a></p>
+<p>•<a href="#preobraz">Аргументы произвольной длины</a></p>
+<p>•<a href="#kreaeraz">Ключевое слово return</a></p>
+
+<br><h2><a style="color:#4D4D4D" name="chisla">Создание функции </a></h2>
+<br><p>Существуют некоторые правила для создания функций в Python.</p>
+<div class="spisok" style="height: 80px">
+<p>•Блок функции начинается с ключевого слова <span class="pink">def</span>, после которого следуют название функции и скобки <span class="pink_border">( () )</span>.</p>
+<p>•Любые аргументы, которые принимает функция должны находиться внутри этих скобок.</p>
+<p>•После скобок идет двоеточие <span class="pink_border">( : )</span> и с новой строки с отступом начинается тело функции.</p></div>
+<br><p>Пример функции в Python:</p>
+<div class="prog" style="height: 70px">
+<p>def my_function(argument):</p>
+<p>print argument</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="spiski"> Вызов функции</a></h2>
+<br><p>После создания функции, ее можно исполнять вызывая из другой функции или напрямую из оболочки <span class="pink_border">Python</span>. Для вызова функции следует ввести ее имя и добавить скобки.
+<p>Например:</p>
+<div class="prog" style="height: 40px">
+<p>my_function("abracadabra")</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="kor"> Аргументы функции в Python</a></h2>
+<br><p>Вызывая функцию, мы можем передавать ей следующие типы аргументов:</p>
+<div class="spisok" style="height: 100px">
+<p>•	Обязательные аргументы <span class="opredelenia">(Required arguments)</span></p>
+<p>•	Аргументы-ключевые слова <span class="opredelenia">(Keyword argument)</span></p>
+<p>•	Аргументы по умолчанию <span class="opredelenia">(Default argument)</span></p>
+<p>•	Аргументы произвольной длины <span class="opredelenia">(Variable-length argumens)</span></p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="str"> Обязательные аргументы функции</a></h2>
+<br><p>Если при создании функции мы указали количество передаваемых ей аргументов и их порядок, то и вызывать ее мы должны с тем же количеством аргументов, заданных в нужном порядке.
+<p>Например:
+<div class="prog" style="height: 150px">
+<p>def bigger(a,b):</p>
+<p>    if a > b:</p>
+ <p>       print a</p>
+ <p>   else:</p>
+ <p>      print b</p>
+ </div>
+
+ <br><p>В описании функции указано, что она принимает 2 аргумента</p>
+
+<br><p><span class="opredelenia">•Корректное использование функции</span></p>
+<div class="prog" style="height: 50px">
+<p>bigger(5,6)</p>
+</div>
+<br><p><span class="opredelenia">•Некорректное использование функции</span></p>
+<div class="prog" style="height: 120px">
+<p>bigger()
+<p>bigger(3)
+<p>bigger(12,7,3) </p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="mnozh"> Аргументы - ключевые слова</a></h2>
+<br><p><span class="opredelenia">Аргументы</span> - ключевые слова используются при вызове функции.
+Благодаря ключевым аргументам, вы можете задавать произвольный (то есть не такой каким он описа при создании функции) порядок аргументов.</p>
+<p>Например:</p>
+<div class="prog" style="height: 80px">
+<p>def person(name, age):</p>
+<p>print name, "is", age, "years old"</p>
+</div>
+<br><p><span class="opredelenia">Хотя в описании функции первым аргументом идет имя, мы можем вызвать функцию вот так:</span></p>
+ <div class="prog" style="height: 50px">
+<p>person(age=23, name="John")</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="slovari"> Аргументы, заданные по-умолчанию</a></h2>
+<br><p>Аргумент по умолчанию, это аргумент, значение для которого задано изначально, при создании функции.</p>
+<p>Например:</p>
+<div class="prog" style="height: 80px">
+<p>	def space(planet_name, center="Star"):</p>
+<p>	    print planet_name, "is orbiting a", center</p>
+</div>
+ <br><p><span class="opredelenia">Можно вызвать функцию space так:</span></p>
+<div class="prog" style="height: 80px">
+<p>space("Mars")</p>
+<p><span class="grey">В результате получим:</span> <span class="pink">Mars is orbiting a Star</span></p>
+</div>
+ <br><p><span class="opredelenia">Можно вызвать функцию space иначе:</span></p>
+<div class="prog" style="height: 80px">
+<p>space("Mars", "Black Hole")</p>
+<p><span class="grey">В результате получим:</span> <span class="pink">Mars is orbiting a Black Hole</span></p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="preobraz"> Аргументы произвольной длины</a></h2>
+<br><p>Иногда возникает ситуация, когда вы заранее не знаете, какое количество аргументов будет необходимо принять функции.
+В этом случае следует использовать аргументы произвольной длины.
+Они задаются произвольным именем переменной, перед которой ставится звездочка <span class="blue">(*)</span>.</p>
+<br><p>Например:</p>
+<div class="prog" style="height: 280px">
+<p>	def unknown(*args):</p>
+<p>    for argument in args:</p>
+<p>       print argument</p>
+<p>unknown("hello","world") </p>
+<p><span class="grey"># напечатает оба слова, каждое с новой строки</span></p>
+<p>unknown(1,2,3,4,5) </p>
+<p><span class="grey"># напечатает все числа, каждое с новой строки</span></p>
+<p>unknown() </p>
+<p><span class="grey"># ничего не выведет</span></p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="kreaeraz">Ключевое слово return</a></h2>
+<br><p>Выражение <span class="pink">return</span> прекращает выполнение функции и возвращает указанное после выражения значение.
+Выражение <span class="pink">return</span> без аргументов это то же самое, что и выражение<span class="pink">return None</span>.
+Соответственно, теперь становится возможным, например, присваивать результат выполнения функции какой либо переменной.</p>
+<br><p>Например:</p>
+<div class="prog" style="height: 200px">
+<p>	def bigger(a,b):</p>
+<p>    if a > b:</p>
+<p>        return a </p>
+<p><span class="grey"># Если a больше чем</span> <span class="blue">b</span>, то возвращаем <span class="blue">b</span> и прекращаем выполнение функции</p>
+<p>    return b </p>
+<p><span class="grey"># Незачем использовать </span><span class="pink">else</span>.</p>
+<p><span class="grey">Если мы дошли до этой строки, то </span><span class="blue">b</span>, точно не меньше чем <span class="blue">a</span></p>
+</div>
+<br><p>Присваиваем результат функции <span class="pink">bigger</span> переменной <span class="pink">num</span></p>
+<div class="prog" style="height: 40px">
+<p>num = bigger(23,42)</p>
+</div>
+<br><p>Источник: <a target="_blank" href="http://pythonicway.com/python-functions">http://pythonicway.com/python-functions</a></p>
+</div>
+	</article>
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

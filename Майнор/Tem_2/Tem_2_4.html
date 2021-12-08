@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 2700px">
+
+
+		<aside style="height: 2700px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" class="active">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Решение задач с помощью условного оператора. Вложенные условия</h1>
+<br><br><h2>Содержание страницы:</h2><br><br>
+<p>•    <a href="#1">Вложенные конструкции IF</a></p>
+<p>•	<a href="#2">Решение задач</a></p>
+
+
+
+<br><br><h2><a style="color:#4D4D4D" name="1">Вложенные конструкции IF</a></h2><br>
+<p>Бывают случаи, когда вы хотите провести ещё одну проверку после того, как результат выражения принят как истина. В таком случае – можно использовать вложенные управляющие конструкции <span class="pink_border">if</span>.</p>
+<br><p>Во вложенной конструкции, вы можете добавлять <span class="pink_border">if - elif - else</span> внутри другой такой же конструкции.</p>
+<br><p>Ситаксис</p>
+<div class="prog" style="height: 300px">
+<p>if условие1:</p>
+<p> &emsp;  действие(я)</p>
+<p> &emsp;  if условие2:</p>
+<p> &emsp;&emsp;     действие(я)</p>
+<p> &emsp;  elif условие3:</p>
+ <p>&emsp;&emsp;     действие(я)</p>
+<p> &emsp;  else</p>
+<p> &emsp;&emsp;     действие(я)</p>
+<p>elif условие4:
+   statement(s)</p>
+<p>else:</p>
+<p>  &emsp; statement(s)</p>
+</div>
+<p>Пример</p>
+<div class="prog" style="height: 350px">
+<p><span class="orange">>>></span>var = 100</p>
+<p><span class="orange">>>></span>if var &lt; 200:</p>
+<p><span class="orange">>>></span> &emsp;   print "Expression value is less than 200"</p>
+<p><span class="orange">>>></span> &emsp;   if var == 150:</p>
+<p><span class="orange">>>></span> &emsp; &emsp;      print "Which is 150"</p>
+<p><span class="orange">>>></span> &emsp;   elif var == 100:</p>
+<p><span class="orange">>>></span> &emsp; &emsp;      print "Which is 100"</p>
+<p><span class="orange">>>></span> &emsp;   elif var == 50:</p>
+<p><span class="orange">>>></span> &emsp; &emsp;      print "Which is 50"</p>
+<p><span class="orange">>>></span>elif var &lt; 50:</p>
+<p><span class="orange">>>></span> &emsp;   print "Expression value is less than 50"</p>
+<p><span class="orange">>>></span>else:</p>
+<p><span class="orange">>>></span>  &emsp;  print "Could not find true expression"</p>
+<p><span class="orange">>>></span>print "Good bye!"</p>
+</div>
+<div class="prog" style="height: 120px">
+<p>Expression value is less than 200</p>
+<p>Which is 100</p>
+<p>Good bye!</p>
+</div>
+
+<h2><a style="color:#4D4D4D" name="2">Решение задач</a></h2><br>
+<p>Задача: написать программу, которая данное число a сравнивает с 0.</p>
+<br><p>Решение:</p>
+<div class="prog" style="height: 250px">
+<p><span class="orange">>>></span>a = int(input("введите число:"))</p>
+<p><span class="orange">>>></span>if a &lt; 0:</p>
+<p><span class="orange">>>></span>   print("Neg")</p>
+<p><span class="orange">>>></span>elif a == 0:</p>
+<p><span class="orange">>>></span>   print("Zero")</p>
+<p><span class="orange">>>></span>else:</p>
+<p><span class="orange">>>></span>   print("Pos")</p>
+</div>
+<p>Задача: написать программу, которая по данным ненулевым числам x и y определяет, в какой из четвертей координатной плоскости находится точка (x,y)</p>
+<br><p>Решение:</p>
+<div class="prog" style="height: 350px">
+<p><span class="orange">>>></span>x = int(input())</p>
+<p><span class="orange">>>></span>y = int(input())</p>
+<p><span class="orange">>>></span>if x &gt; 0:</p>
+<p><span class="orange">>>></span> &emsp;   if y &gt; 0:       &emsp; &emsp;        <span class="grey"> # x &gt; 0, y &gt; 0</span></p>
+<p><span class="orange">>>></span> &emsp;&emsp;       print("Первая четверть")</p>
+<p><span class="orange">>>></span> &emsp;   else:           &emsp; &emsp;        <span class="grey"> # x > 0, y &lt; 0</span></p>
+<p><span class="orange">>>></span> &emsp;&emsp;       print("Четвертая четверть")</p>
+<p><span class="orange">>>></span>else:</p>
+<p><span class="orange">>>></span> &emsp;   if y &gt; 0:         &emsp; &emsp;      <span class="grey"> # x &lt; 0, y &gt; 0</span></p>
+<p><span class="orange">>>></span>  &emsp;&emsp;      print("Вторая четверть")</p>
+<p><span class="orange">>>></span> &emsp;   else:               &emsp; &emsp;    <span class="grey"> # x &lt; 0, y &lt; 0</span></p>
+<p><span class="orange">>>></span>  &emsp;&emsp;      print("Третья четверть")</p>
+		</div>
+		<p>Практика: <a  target="_blank" href=" http://informatics.mccme.ru/mod/statements/view.php?id=276">  http://informatics.mccme.ru/mod/statements/view.php?id=276</a></p>
+		<br><br>
+		<p>Источники: <a  target="_blank" href=" https://rtfm.co.ua/books-translations/python_s_nulya/python-s-nulya-chast-4-upravlyayushhie-konstrukcii-operatory-if-elif-else/">  https://rtfm.co.ua/</a></p>
+		<br> &emsp; &emsp; &emsp; <p> <a  target="_blank" href=" https://devpractice.ru/python-lesson-5-if-while-for-operators/">  https://devpractice.ru/python-lesson-5-if-while-for-operators/</a></p>
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

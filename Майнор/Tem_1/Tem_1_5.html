@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_1.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 2800px">
+
+
+		<aside style="height: 2800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" class="active">Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+	</aside>
+		<div id="main1">
+<h1 id="h11">Арифметические операции. Целочисленная арифметика </h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">	Арифметические операции</a></p>
+<p>•	<a href="#spiski">Арифметические операции с присвоением</a></p>
+<p>•	<a href="#kor">Функции преобразования чисел</a></p>
+<p>•	<a href="#k">Библиотека math</a></p>
+<br><br>
+<h2><a name="chisla" style="color:#4D4D4D">Арифметические операции</a></h2><br><br>
+<p>Python поддерживает все распространенные арифметические операции:</p>
+<br>
+
+<table>
+<tr>
+<td><span class="pink">x + y</span></td>   <td>Сложение</td>
+</tr>
+<tr>
+<td><span class="pink">x - y</span></td>   <td>Вычитание</td>
+</tr>
+<tr>
+<td><span class="pink">x * y</span></td>   <td>Умножение</td>
+</tr>
+<tr>
+<td><span class="pink">x / y</span></td>   <td>Деление</td>
+</tr>
+<tr>
+<td><span class="pink">x // y</span></td>   <td>Получение целой части от деления</td>
+</tr>
+<tr>
+<td><span class="pink">x % y</span></td>   <td>Остаток от деления</td>
+</tr>
+<tr>
+<td><span class="pink">-x</span></td>   <td>Смена знака числа</td>
+</tr>
+<tr>
+<td><span class="pink">x ** y</span></td>   <td>Возведение в степень</td>
+</tr>
+</table>
+<br>
+<div class="prog" style="height: 270px">
+<p><span class="orange">>>></span>print(6 + 2)  </p>
+<p>8</p>
+<p><span class="orange">>>></span>print(7 / 2)  </p>
+<p>3.5</p>
+<p><span class="orange">>>></span>print(7 // 2) </p>
+<p>3</p>
+<p><span class="orange">>>></span>print(6 ** 2)  </p>
+<p>36</p>
+<p><span class="orange">>>></span>print(7 % 2) </p>
+<p>1</p>
+</div>
+<p>Пусть у нас выполняется следующее выражение:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span>number = 3 + 4 * 5 ** 2 + 7</p>
+<p><span class="orange">>>></span>print(number)</p>
+<p>110</p>
+</div>
+<p>Здесь начале выполняется возведение в степень (5 ** 2) как операция с большим приоритетом, далее результат умножается на 4 (25 * 4), затем происходит сложение (3 + 100) и далее опять идет сложение (103 + 7).
+Чтобы переопределить порядок операций, можно использовать скобки: </p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span>number = (3 + 4( * (5 ** 2 + 7)</p>
+<p><span class="orange">>>></span>print(number)</p>
+<p>110</p>
+</div>
+<p>Следует отметить, что в арифметических операциях могут принимать участие как целые, так и дробные числа. Если в одной операции участвует целое число (int) и число с плавающей точкой (float), то целое число приводится к типу float.</p>
+<br><h2><a name="spiski" style="color:#4D4D4D">Арифметические операции с присвоением</a></h2><br>
+<p>Ряд специальных операций позволяют использовать присвоить результат операции первому операнду:	<span class="blue">+=, -=, *=, /=, //=, **=, %=</span></p>
+<p>Примеры операций:</p>
+<div class="prog" style="height: 270px">
+<p><span class="orange">>>></span>number = 10</p>
+<p><span class="orange">>>></span>number += 5</p>
+<p><span class="orange">>>></span>print(number) </p>
+<p>15</p>
+<p><span class="orange">>>></span>number -= 3</p>
+<p><span class="orange">>>></span>print(number)  </p>
+<p>12</p>
+<p><span class="orange">>>></span>number *= 4</p>
+<p><span class="orange">>>></span>print(number)  </p>
+<p>48</p>
+</div>
+<br><h2><a name="kor" style="color:#4D4D4D">Функции преобразования чисел</a></h2><br>
+<p>Ряд встроенных функций в Python позволяют работать с числами. В частности, функции <span class="pink_border">int()</span> и <span class="pink_border">float()</span> позволяют привести значение к типу int и float соответственно.</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span>first_number = "2" </p>
+<p><span class="orange">>>></span>second_number = 3</p>
+<p><span class="orange">>>></span>third_number = int(first_number) + second_number</p>
+<p><span class="orange">>>></span>print(third_number) </p>
+<p>5</p>
+</div>
+<p>Аналогичным образом действует функция <span class="pink_border">float()</span>, которая преобразует в число с плавающей точкой. Но вообще с дробными числами надо учитывать, что результат операций с ними может быть не совсем точным. Например:</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span>first_number = 2.0001</p>
+<p><span class="orange">>>></span>second_number = 5</p>
+<p><span class="orange">>>></span>third_number = first_number / second_number</p>
+<p><span class="orange">>>></span>print(third_number) </p>
+<p>0.40002000000000004</p>
+</div>
+<p>В данном случае мы ожидаем получить число 0.40002, однако в конце через ряд нулей появляется еще какая-то четверка.</p>
+<p>В этом случае для округления результата мы можем использовать функцию <span class="pink_border">round()</span>:</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span>first_number = 2.0001</p>
+<p><span class="orange">>>></span>second_number = 0.1</p>
+<p><span class="orange">>>></span>third_number = first_number + second_number</p>
+<p><span class="orange">>>></span>print(round(third_number, 4))  </p>
+<p>2.1001</p>
+</div>
+<p>Первый параметр функции - округляемое число, а второй - сколько знаков после запятой должно содержать получаемое число.</p><br>
+
+<p><a name="k" style="color:#4D4D4D">В </a> стандартную поставку Python входит библиотека <span class="blue">math</span>, в которой содержится большое количество часто используемых математических функций.Подробнее: <a target="_blank" href="https://metanit.com/python/tutorial/6.2.php">https://metanit.com/python/tutorial/6.2.php</a></p>
+
+<br><br>
+<p>Источник: <a target="_blank" href="https://metanit.com/python/tutorial/2.3.php">https://metanit.com/python/tutorial/2.3.php</a></p>
+
+</div>
+
+
+
+
+	</article>
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+
+	</footer>
+</body>
+</html>

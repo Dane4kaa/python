@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_5.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 2800px">
+
+
+		<aside style="height: 2800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html" class="active">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+
+	</aside>
+		<div id="main1">
+<h1><span>Словари. Основные понятия</span> </h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">Литерал </a></p>
+<p>•<a href="#spiski">Функция dict</a></p>
+<p>•<a href="#kore">Метод fromkeys</a></p>
+<p>•<a href="#keor">Генераторы списков</a></p>
+<p>•<a href="#ekor">Методы словарей</a></p>
+
+<br><p><span class="opredelenia">Словари в Python</span> - неупорядоченные коллекции произвольных объектов с доступом по ключу.
+Их иногда ещё называют ассоциативными массивами или хеш-таблицами.
+Чтобы работать со словарём, его нужно создать. Создать его можно несколькими способами.
+Во-первых, с помощью <span class="pink">литерала</span>;</p>
+
+<br><h2><a style="color:#4D4D4D" name="chisla">Литерал</a></h2>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> d = {}</p>
+<p><span class="orange">>>></span> d</p>
+<p>{}</p>
+<p><span class="orange">>>></span>d = {'dict': 1, 'dictionary': 2}</p>
+<p><span class="orange">>>></span>d</p>
+<p>{'dict': 1, 'dictionary': 2}</p>
+</div>
+
+<br><p>Во-вторых, с помощью функции <span class="pink">dict:</span></p>
+
+<br><h2><a style="color:#4D4D4D" name="spiski">Функция dict</a></h2>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> d = dict(short='dict', long='dictionary')</p>
+<p><span class="orange">>>></span>d</p>
+<p>{'short': 'dict', 'long': 'dictionary'}</p>
+<p><span class="orange">>>></span> d = dict([(1, 1), (2, 4)])</p>
+<p><span class="orange">>>></span> d</p>
+<p>{1: 1, 2: 4}</p>
+</div>
+
+<br><p>В-третьих, с помощью метода <span class="pink">fromkeys:</span></p>
+
+<br><h2><a style="color:#4D4D4D" name="kore">Метод fromkeys</a></h2>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> d = dict.fromkeys(['a', 'b'])</p>
+<p><span class="orange">>>></span> d</p>
+<p>{'a': None, 'b': None}</p>
+<p><span class="orange">>>></span> d = dict.fromkeys(['a', 'b'], 100)</p>
+<p><span class="orange">>>></span> d</p>
+<p>{'a': 100, 'b': 100}</p>
+</div>
+
+<br><p>В-четвертых, с помощью генераторов словарей, которые очень похожи на г<span class="pink">енераторы списков</span>.</p>
+
+<br><h2><a style="color:#4D4D4D" name="keor">Генераторы списков</a></h2>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> d = {a: a ** 2 for a in range(7)}</p>
+<p><span class="orange">>>></span> d</p>
+<p>{0: 0, 1: 1, 2: 4, 3: 9, 4: 16, 5: 25, 6: 36}</p>
+</div>
+<br><p>Теперь попробуем добавить записей в словарь и извлечь значения ключей:</p>
+<div class="prog" style="height: 270px">
+<p><span class="orange">>>></span>  d = {1: 2, 2: 4, 3: 9}</p>
+<p><span class="orange">>>></span>  d[1]</p>
+<p>2</p>
+<p><span class="orange">>>></span>  d[4] = 4 ** 2</p>
+<p><span class="orange">>>></span>  d</p>
+<p>{1: 2, 2: 4, 3: 9, 4: 16}</p>
+<p><span class="orange">>>></span>  d['1']</p>
+<p>Traceback (most recent call last):</p>
+<p>  File "", line 1, in</p>
+<p>    d['1']</p>
+<p>KeyError: '1'</p>
+</div>
+
+<br><br><p>Как видно из примера, присвоение по новому ключу расширяет словарь, присвоение по существующему
+ключу перезаписывает его, а попытка извлечения несуществующего ключа порождает исключение.
+Для избежания исключения есть специальный метод (см. ниже), или можно перехватывать исключение.
+Что же можно еще делать со словарями? Да то же самое, что и с другими объектами: встроенные
+функции, ключевые слова (например, циклы for и while), а также специальные методы словарей.</p>
+
+<br><h2><a style="color:#4D4D4D" name="ekor">Методы словарей</a></h2>
+<br><p><div class="spisok" style="height: 400px">
+<p><span class="opredelenia">dict.clear()</span> - очищает словарь.</p>
+<p><span class="opredelenia">dict.copy()</span> - возвращает копию словаря.</p>
+<p><span class="opredelenia">classmethod dict.fromkeys(seq[, value])</span> - создает словарь с ключами из seq и значением value (по умолчанию None).</p>
+<p><span class="opredelenia">dict.get(key[, default])</span> - возвращает значение ключа, но если его нет, не бросает исключение, а возвращает default (по умолчанию None).</p>
+<p><span class="opredelenia">dict.items()</span> - возвращает пары (ключ, значение).</p>
+<p><span class="opredelenia">dict.keys(</span>) - возвращает ключи в словаре.</p>
+<p><span class="opredelenia">dict.pop(key[, default]) </span>- удаляет ключ и возвращает значение. Если ключа нет, возвращает default (по умолчанию бросает исключение).</p>
+<p><span class="opredelenia">dict.popitem()</span> - удаляет и возвращает пару (ключ, значение). Если словарь пуст, бросает исключение KeyError. Помните, что словари неупорядочены.</p>
+<p><span class="opredelenia">dict.setdefault(key[, default])</span> - возвращает значение ключа, но если его нет, не бросает исключение, а создает ключ с значением default (по умолчанию None).</p>
+<p><span class="opredelenia">dict.update([other])</span>- обновляет словарь, добавляя пары (ключ, значение) из other. Существующие ключи перезаписываются. Возвращает None (не новый словарь!).</p>
+<p><span class="opredelenia">dict.values()</span> - возвращает значения в словаре.</p>
+</div>
+<br><p>Обычные списки (массивы) представляют собой набор пронумерованных элементов, то есть для обращения
+к какому-либо элементу списка необходимо указать его номер. Номер элемента в списке однозначно идентифицирует
+сам элемент. Но идентифицировать данные по числовым номерам не всегда оказывается удобно. Например, маршруты поездов в России идентифицируются численно-буквенным кодом (число и одна буква),
+также численно-буквенным кодом идентифицируются авиарейсы, то есть для хранения информации о рейсах поездов или самолетов в качестве идентификатора удобно было бы использовать не число, а текстовую строку.
+Структура данных, позволяющая идентифицировать ее элементы не по числовому индексу, а по произвольному,
+называется словарем или ассоциативным массивом. Соответствующая структура данных в языке Питон называется <span class="blue">dict</span>.</p>
+
+
+<br><br><p>Источники:
+<p>1.<a target="_blank" href="https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html">https://pythonworld.ru/tipy-dannyx-v-python/slovari-dict-funkcii-i-metody-slovarej.html</a></p>
+<p>2.<a target="_blank" href="http://pythontutor.ru/lessons/dicts/">http://pythontutor.ru/lessons/dicts/</a></p>
+<p>3.<a target="_blank" href="http://desktop.arcgis.com/ru/arcmap/10.3/analyze/python/essential-python-vocabulary.htm">http://desktop.arcgis.com/ru/arcmap/10.3/analyze/python/essential-python-vocabulary.htm</a></p>
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_5.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 5000px">
+
+
+		<aside style="height: 5000px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html" class="active">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Работа с файлами</h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">	 Как открыть файл </a></p>
+<p>•	<a href="#spiski">Базовые файловые методы</a></p>
+<p>•	<a href="#kor">Стандартный ввод/вывод</a></p>
+<p>•	<a href="#str">Произвольный доступ</a></p>
+<p>•	<a href="#mnozh">Построчная работа с файлами</a></p>
+<p>•	<a href="#slovari">Закрытие файла</a></p>
+<p>•	<a href="#preobraz">Pickling</a></p>
+
+<h2><a style="color:#4D4D4D" name="chisla">Как открыть файл</a></h2>
+<br><p>Открыть файл можно с помощью функции <span class="pink">open</span>:</p>
+<div class="prog" style="height: 60px">
+<p>open(name[, mode[, buffering]])</p>
+</div>
+<p>Функция возвращает файловый объект. Обязателен только первый аргумент. Если остальные параметры отсутствуют, файл будет доступен на чтение. Таблица режимов  <span class="pink">(mode)</span> функции open:
+<p><span class="opredelenia">'r'</span> – чтение.</p>
+<p><span class="opredelenia">'w'</span> – запись.</p>
+<p><span class="opredelenia">'a'</span> – добавление.</p>
+<p><span class="opredelenia">'b'</span> – бинарный режим.</p>
+<p><span class="opredelenia">'+'</span> – чтение/запись.</p>
+<br><p>Режим <span class="pink">'+'</span> может быть добавлен к остальным режимам. По умолчанию питон открывает файлы в текстовом режиме. Для открытия файла в бинарном режиме на чтение можно добавить <span class="pink">'rb'</span>.
+Третий параметр устанавливает размер буферизации при работе с файлом.
+По умолчанию он выключен, и чтение/запись идет напрямую с диска на диск. Для включения буфера третий параметр должен быть отличным от нуля.</p>
+<br><br><h2><a style="color:#4D4D4D" name="spiski">Базовые файловые методы</a></h2>
+<br><p>В питоне многие объекты являются файлами: стандартный ввод <span class="pink">sys.stdin</span>, стандартный вывод <span class="pink">sys.stdout</span>, объекты, открываемые функцией <span class="pink">urllib.urlopen</span> и т.д.</p>
+<br><p>Запись в файл:</p>
+<div class="prog" style="height: 130px">
+<p><span class="orange">>>></span>f = open('my_file', 'w')</p>
+<p><span class="orange">>>></span> f.write('Hello, ')</p>
+<p><span class="orange">>>></span> f.write('World!')</p>
+<p><span class="orange">>>></span> f.close()</p>
+</div>
+<p>Чтение:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> f = open('my_file', 'r')</p>
+<p><span class="orange">>>></span> f.read(5)</p>
+<p>'Hello'</p>
+<p><span class="orange">>>></span>f.read()</p>
+<p>', World!'</p>
+</div>
+<br><h2><a style="color:#4D4D4D" name="kor">Стандартный ввод/вывод</a></h2>
+<br><p>В командной строке можно записать подряд несколько команд, передавая результат работы от одной команды к другой по конвейеру – или по каналу <span class="pink">(pipe)</span>:</p>
+<div class="prog" style="height: 60px">
+<p>cat my_file | python test.py</p>
+</div>
+<p>Первая команда – <span class="opredelenia">cat</span> – пишет содержимое текстового файла <span class="pink">my_file</span> на стандартный вывод <span class="pink">sys.stdout</span> .
+Вторая команда запускает питоновский файл, который читает стандартный ввод <span class="pink">sys.stdin</span>, подсчитывает в нем количество слов и выводит результат:
+<div class="prog" style="height: 200px">
+<p>test.py:</p>
+<p>import sys</p>
+<p><span class="orange">>>></span>text = sys.stdin.read()</p>
+<p><span class="orange">>>></span>words = text.split()</p>
+<p><span class="orange">>>></span>wordcount = len(words)</p>
+<p><span class="orange">>>></span>print 'Wordcount:', wordcount</p>
+</div>
+<br><p><span class="opredelenia">Канал</span> <span class="pink"> (pipe)</span> – это конструкция, объединяющая стандартный вывод со стандартным вводом и позволяющая обмениваться данными между двумя командами.</p>
+<br><h2><a style="color:#4D4D4D" name="str">Произвольный доступ</a></h2>
+<br><p>По умолчанию метод <span class="pink">read()</span> читает данные последовательно по порядку, от начала и до конца файла. Для произвольного доступа к файлу есть функция <span class="pink">seek</span>:
+<div class="prog" style="height: 60px">
+<p>seek(offset[, whence])</p>
+</div>
+<span class="opredelenia">offset</span> – смещение в байтах относительно начала файла;
+<span class="opredelenia">whence</span> – по умолчанию равен нулю, указывает на то, что смещение берется относительно начала файла.
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span> f = open(r'my_file', 'w')</p>
+<p><span class="orange">>>></span>f.write('01234567890123456789')</p>
+<p><span class="orange">>>></span> f.seek(5)</p>
+<p><span class="orange">>>></span>f.write('Hello, World!')</p>
+<p><span class="orange">>>></span>f.close()</p>
+<p><span class="orange">>>></span> f = open(r'my_file')</p>
+<p><span class="orange">>>></span> f.read()</p>
+<p>'01234Hello, World!89'</p>
+</div>
+<br><br><p>Функция <span class="pink">tell()</span> возвращает текущую позицию файла.</p>
+<br><h2><a style="color:#4D4D4D" name="mnozh">Построчная работа с файлами</a></h2>
+<br><p>Обычно мы имеем дело с текстовыми файлами. Прочитать одну строку:</p>
+<div class="prog" style="height: 60px">
+<p><span class="orange">>>></span>file.readline()
+</div>
+Функция readline() без параметра читает всю строку, наличие параметра указывает функции максимальное число символов строки, которое будет прочитано.
+Прочитать все строки и вернуть список строк:
+<div class="prog" style="height: 60px">
+<p><span class="orange">>>></span>file.readlines()</p>
+</div>
+Записать строки в файл:
+<div class="prog" style="height: 60px">
+<p><span class="orange">>>></span>	file.writelines()</p>
+</div>
+Пример. Прочитать файл и записать его содержимое в другой файл:
+<div class="prog" style="height: 250px">
+<p><span class="orange">>>></span>f = open(r'my_file')</p>
+<p><span class="orange">>>></span>lines = f.readlines()</p>
+<p><span class="orange">>>></span>f.close()</p>
+<p><span class="orange">>>></span>lines[0] = "This is a my_file2 </p>
+<p><span class="grey">n" # изменяем 1-ю строку</span></p>
+<p><span class="orange">>>></span>f = open(r'my_file2','w')</p>
+<p><span class="orange">>>></span>f.writelines(lines)</p>
+<p><span class="orange">>>></span>f.close()</p>
+</div>
+<br><h2><a style="color:#4D4D4D" name="slovari">Закрытие файла</a></h2>
+<br><p>Для закрытия файла есть метод <span class="pink">close()</span>.
+Обычно файл закрывается сам после того, как вы выходите из программы, но файлы нужно закрывать вручную по нескольким причинам.</p>
+<div class="spisok" style="height: 167px">
+<p>1.	Питон может буферизировать запись в файл ваших данных, что может привести к неожиданным эффектам и возникновению ошибок.</p>
+<p>2.	У операционной системы есть ограничение на число одновременно открытых файлов.</p>
+<p>3.	При доступе к файлу из разных мест одновременно и на чтение, и на запись необходимо синхронизировать файловые операции. Буферизация записи может привести к тому, что запись уже произошла, а данных в файле еще нет.</p>
+<br><p>Для полной уверенности в закрытии файла можно использовать блок <span class="pink">try/finally</span>:
+</div>
+<div class="prog" style="height: 110px">
+<p>try:</p>
+<p><span class="grey"># Тут идет запись в файл</span></p>
+<p>finally:</p>
+<p>file.close()</p>
+</div>
+<br><p>Можно также использовать менеджер контекста, который в любом случае закроет файл:</p>
+<div class="prog" style="height: 80px">
+<p>with open("my_file") as somefile:</p>
+<p>do_something(somefile)</p>
+</div>
+<br><p>Если вы все же не хотите закрывать файл, то синхронизировать многопользовательский доступ к файлу на чтение/запись можно с помощью функции <span class="pink">flush()</span>, которая актуализирует все операции записи на диск.
+При этом возможна блокировка файла на чтение.</p>
+<br><h2><a style="color:#4D4D4D" name="chisla">Итерация</a></h2>
+<br><p>Итерация по файлу является базовой операцией и имеет множество вариантов. Использование функции <span class="pink">read()</span> для байтового чтения:</p>
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span>f = open(filename)</p>
+<p><span class="orange">>>></span>while True:</p>
+<p><span class="orange">>>></span>  char = f.read(1)</p>
+<p><span class="orange">>>></span>  if not char: break</p>
+<p><span class="orange">>>></span>  process(char)</p>
+<p><span class="orange">>>></span>f.close()</p>
+</div>
+<p>Построчное чтение текстовых файлов и функция <span class="pink">readline()</span>:</p>
+<div class="prog" style="height: 220px">
+<p><span class="orange">>>></span>f = open(filename)</p>
+<p><span class="orange">>>></span>while True:</p>
+<p><span class="orange">>>></span>  line = f.readline()<p>
+<p><span class="orange">>>></span>  if not line: break</p>
+<p><span class="orange">>>></span>  process(line)</p>
+<p><span class="orange">>>></span>f.close()</p>
+</div>
+<p>Файл сам может выступать в роли итератора:</p>
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span>for line in open(filename):</p>
+<p><span class="orange">>>></span>  process(line)</p>
+  </div>
+<br><h2><a style="color:#4D4D4D" name="preobraz">Pickling</a></h2>
+<br><p>Практически любой тип объекта может быть сохранен на диске в любой момент его жизни, а позже прочитан с диска. Для этого есть модуль <span class="pink">pickle</span>:</p>
+<div class="prog" style="height: 220px">
+<p><span class="orange">>>></span>import pickle</p>
+<p><span class="orange">>>></span>t1 = [1, 2, 3]</p>
+<p><span class="orange">>>></span>s = pickle.dumps(t1)</p>
+<p><span class="orange">>>></span>t2 = pickle.loads(s)</p>
+<p><span class="orange">>>></span>print t2</p>
+<p>[1, 2, 3]
+</div>
+<br><p>Здесь есть небольшой нюанс:  <span class="pink">t1</span> и <span class="pink">t2</span> будут двумя разными объектами, хотя и идентичными.</p>
+
+<br><br><p>Источник: <a target="_blank" href="https://www.ibm.com/developerworks/ru/library/l-python_part_8/index.html">https://www.ibm.com/developerworks/ru/library/l-python_part_8/index.html</a></p>
+</div>
+	</article>
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

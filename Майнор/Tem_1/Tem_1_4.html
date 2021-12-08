@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_1.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 3100px">
+
+
+		<aside style="height: 3100px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" class="active">Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+
+<h1 id="h11">Оператор Print. Организация ввода-вывода</h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">	Вывод данных в консоль</a></p>
+<p>•	<a href="#spiski">Ввод данных с клавиатуры</a></p>
+<p>•	<a href="#kor">Практическая работа</a></p>
+<br><br>
+<h2><a style="color:#4D4D4D" name="chisla">Вывод данных в консоль</a></h2><br>
+<p>Один из самых распространенных способов вывести данные в Python – это напечатать их в консоли. Если вы находитесь на этапе изучения языка, такой способ является основным для того, чтобы быстро просмотреть результат свой работы. Для вывода данных в консоль используется функция <span class="pink_border">print</span>.</p>
+<br><p>Рассмотрим основные способы использования данной функции.</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> print("Hello")</p>
+<p>Hello</p>
+<p><span class="orange">>>></span> print("Hello, " + "world!")</p>
+<p>Hello, world!</p>
+<p><span class="orange">>>></span> print("Age: " + str(23))</p>
+<p>Age: 23</p>
+</div>
+<p>По умолчанию, для разделения элементов в функции print используется пробел.</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> print("A", "B", "C")</p>
+<p>A B C</p>
+</div>
+<p>Для замены разделителя необходимо использовать параметр <span class="pink_border">sep</span> функции <span class="pink_border">print</span>.</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> print("A", "B", "C", sep="#")</p>
+<p>A#B#C</p>
+</div>
+<p>В качестве конечного элемента выводимой строки, используется символ перевода строки.</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> for i in range(3):</p>
+ <p>  &emsp;&emsp; print("i: " + str(i))   </p>
+<p>i: 0</p>
+<p>i: 1</p>
+<p>i: 2</p>
+</div>
+<p>Для его замены используется параметр <span class="pink_border">end</span>.</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> for i in range(3):</p>
+ <p> &emsp;&emsp;  print("[i: " + str(i) + "]", end=" -- ")</p>
+<p>[i: 0] -- [i: 1] -- [i: 2] -- </p>
+</div><br>
+<h2><a style="color:#4D4D4D" name="spiski">Ввод данных с клавиатуры</a></h2><br>
+<p>Для считывания вводимых с клавиатуры данных используется функция <span class="pink_border">input()</span>.</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> input()</p>
+<p>test</p>
+<p>'test'</p>
+</div>
+<p>Для сохранения данных в переменной используется следующий синтаксис.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> a = input()</p>
+<p>hello</p>
+<p><span class="orange">>>></span> print(a)</p>
+<p>hello</p>
+</div>
+<p>Если считывается с клавиатуры целое число, то строку, получаемую с помощью функции <span class="pink_border">input()</span>, можно передать сразу в функцию <span class="pink_border">int()</span>.</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> val = int(input())</p>
+<p>123</p>
+<p><span class="orange">>>></span> print(val)</p>
+<p>123</p>
+<p><span class="orange">>>></span> type(val)</p>
+<p>&lt;class 'int'&gt;</p>
+</div>
+<p>Для вывода строки-приглашения, используйте ее в качестве аргумента функции <span class="pink_border">input()</span>.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> tv = int(input("input number: "))</p>
+<p>input number: 334</p>
+<p><span class="orange">>>></span> print(tv)</p>
+<p>334</p>
+</div>
+<p>Преобразование строки в список осуществляется с помощью метода <span class="pink_border">split()</span>, по умолчанию, в качестве разделителя, используется пробел.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span>  l = input().split()</p>
+<p>1 2 3 4 5 6 7</p>
+<p><span class="orange">>>></span>  print(l)</p>
+<p>['1', '2', '3', '4', '5', '6', '7']</p>
+</div>
+<p>Разделитель можно заменить, указав его в качестве аргумента метода <span class="pink_border">split()</span>.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>> </span> nl = input().split("-")</p>
+<p>1-2-3-4-5-6-7</p>
+<p><span class="orange">>>></span>  print(nl)</p>
+<p>['1', '2', '3', '4', '5', '6', '7']</p>
+</div>
+<p>Для считывания списка чисел с одновременным приведением их к типу int можно воспользоваться вот такой конструкцией.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> nums = map(int, input().split())</p>
+<p>1 2 3 4 5 6 7</p>
+<p><span class="orange">>>> </span>print(list(nums))</p>
+<p>[1, 2, 3, 4, 5, 6, 7]</p>
+</div>
+<h2><a style="color:#4D4D4D" name="kor">Практическая работа</a></h2><br>
+<p>Напишите программу (файл user.py), которая запрашивала бы у пользователя:</p>
+<p>- его имя (например, "What is your name?")</p>
+<p>- возраст ("How old are you?")</p>
+<p>- место жительства ("Where are you live?")</p>
+<p>После этого выводила бы три строки:</p>
+<p>"This is имя"</p>
+<p>"It is возраст"</p>
+<p>"(S)he live in место_жительства"</p>
+<p>Вместо имя, возраст, место_жительства должны быть данные, введенные пользователем. Примечание: можно писать фразы на русском языке, но если вы планируете стать профессиональным программистом, привыкайте к английскому.</p>
+
+Напишите программу (файл arithmetic.py), которая предлагала бы пользователю решить пример 4 * 100 - 54. Потом выводила бы на экран правильный ответ и ответ пользователя. Подумайте, нужно ли здесь преобразовывать строку в число.
+
+Запросите у пользователя четыре числа. Отдельно сложите первые два и отдельно вторые два. Разделите первую сумму на вторую. Выведите результат на экран так, чтобы ответ содержал две цифры после запятой.
+<br><br><br><br><p>Источник: <a target="_blank" href="https://devpractice.ru/python-lesson-12-input-output-work-with-files/"> https://devpractice.ru/python-lesson-12-input-output-work-with-files/</a></p>
+<br><p>Подробнее: <a target="_blank" href="https://younglinux.info/python/input.php"> https://younglinux.info/python/input.php</a></p>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>

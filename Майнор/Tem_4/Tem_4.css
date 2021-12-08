@@ -1,0 +1,64 @@
+/*установка по*/
+
+.imgg{                 /*for all images кроме первой*/
+	text-align: center;
+	height: 400px;
+}
+.imgg3{                 /*prosto 4.1*/
+	text-align: center;
+	height: 700px;
+}
+.imgg1{               /*для первой*/
+	text-align: center;
+	height: 250px;
+}
+.imgg-right{               /*для двух фоток типо сравнения*/
+	text-align: right;
+	height: 110px;
+	padding-right: 5em;
+}
+.imgg-left{               /*для двух фоток типо сравнения*/
+    text-align: right;
+	height: 110px;
+	padding-left: 5em;
+
+}
+a.active {
+    background-color: rgba(10, 110, 201, 1);
+    color: #4A90F2;
+}
+p{
+	padding-left:30px;
+	text-indent: 1.5em;
+}
+
+a{
+	color:#1E79A9;
+
+}
+.spisok{                            /*для списков(4.2)*/
+	padding-left:5px;
+	padding-top: 5px;
+	height:230px;
+	width:1000px;
+}
+.prog{
+	padding-left:50px;
+	padding-top: 20px;
+	height:230px;
+	width:1000px;
+}
+.prog p{
+		border-bottom: 1px solid #54B0A6;
+		background-color: #D2EFEA;
+}
+table td{
+	 border-bottom: 1px solid #D2EFEA;
+	 width: 300px;
+	 padding-left: 50px;
+}
+span.opredelenia{
+	font-weight:bold;
+	color: black;
+	border-bottom:2px solid currentColor;
+}

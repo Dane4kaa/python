@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" >
+<link rel="Stylesheet" type="text/css" href="Tem_3.css" >
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height:4800px">
+
+
+		<aside style="height:4800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" class="active">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+
+		<h1 id="h11">Одномерные массивы. Алгоритмы обработки одномерных массивов</h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#modyl">Модуль array </a></p>
+<p>•<a href="#metody">Методы массивов (array) в python</a></p>
+<p>•<a href="#algoritmi">Алгоритмы обработки массивов </a></p>
+<p>•<a href="#vodvivod">Ввод-вывод элементов одномерного массива </a></p>
+
+
+<h2><a style="color:#4D4D4D" name="modyl">Модуль array</a></h2>
+<br><p>Модуль array определяет массивы в python. Массивы очень похожи на списки, но с ограничением на тип данных и размер каждого элемента.Размер и тип элемента в массиве определяется при его создании и может принимать следующие значения:</p>
+<br><div class="imgg3"><img class="img_border" src="images_3/3.2_1.png" alt=""></div><br>
+<br><p>Класс array.array(TypeCode [инициализатор]) - новый массив, элементы которого ограничены TypeCode, и инициализатор, который должен быть списком, объектом, который поддерживает интерфейс буфера, или итерируемый объект.
+array.typecodes - строка, содержащая все возможные типы в массиве.</p>
+<br><p>Массивы изменяемы. Массивы поддерживают все списковые методы (индексация, срезы, умножения, итерации), и другие методы.</p>
+
+<h2><a style="color:#4D4D4D" name="metody">Методы массивов (array) в python</a></h2>
+<p><span class="opredelenia">array.typecode</span> - TypeCode символ, использованный при создании массива.</p>
+<p><span class="opredelenia">array.itemsize</span> - размер в байтах одного элемента в массиве.</p>
+<p><span class="opredelenia">array.append(х)</span> - добавление элемента в конец массива.</p>
+<p><span class="opredelenia">array.buffer_info()</span> - кортеж (ячейка памяти, длина). Полезно для низкоуровневых операций.</p>
+<p><span class="opredelenia">array.byteswap()</span> - изменить порядок следования байтов в каждом элементе массива. Полезно при чтении данных из файла, написанного на машине с другим порядком байтов.</p>
+<p><span class="opredelenia">array.count(х)</span> - возвращает количество вхождений х в массив.</p>
+<p><span class="opredelenia">array.extend(iter)</span> - добавление элементов из объекта в массив.</p>
+<p><span class="opredelenia">array.frombytes(b) </span>- делает массив array из массива байт. Количество байт должно быть кратно размеру одного элемента в массиве.</p>
+<p><span class="opredelenia">array.fromfile(F, N) </span>- читает N элементов из файла и добавляет их в конец массива. Файл должен быть открыт на бинарное чтение. Если доступно меньше N элементов, генерируется исключение EOFError , но элементы, которые были доступны, добавляются в массив.</p>
+<p><span class="opredelenia">array.fromlist(список)</span> - добавление элементов из списка.</p>
+<p><span class="opredelenia">array.index(х)</span> - номер первого вхождения x в массив.</p>
+<p><span class="opredelenia">array.insert(n, х)</span> - включить новый пункт со значением х в массиве перед номером n. Отрицательные значения рассматриваются относительно конца массива.</p>
+<p><span class="opredelenia">array.pop(i)</span> - удаляет i-ый элемент из массива и возвращает его. По умолчанию удаляется последний элемент.</p>
+<p><span class="opredelenia">array.remove(х)</span> - удалить первое вхождение х из массива.</p>
+<p><span class="opredelenia">array.reverse()</span> - обратный порядок элементов в массиве.</p>
+<p><span class="opredelenia">array.tobytes()</span> - преобразование к байтам.</p>
+<p><span class="opredelenia">rray.tofile(f)</span> - запись массива в открытый файл.</p>
+<p><span class="opredelenia">array.tolist()</span> - преобразование массива в список.</p>
+<br><p>Вот и всё, что можно было рассказать про массивы. Они используются редко, когда нужно достичь высокой скорости работы. В остальных случаях массивы можно заменить другими типами данных: списками, кортежами, строками.</p>
+<br>
+<h2><a style="color:#4D4D4D" name="algoritmi">Алгоритмы обработки массивов</a></h2>
+<br><p>Часто   для   работы   с   множеством   однотипных   данных   (целочисленнымизначениями,   строками,   датами   и   т.п.) оказывается удобным использовать
+массивы. Например, можно создать массив для хранения списка студентов,бучающихся в одной группе. Вместо создания переменных для каждого студента.
+Достаточно создать один массив, где каждой фамилии из списка будет присвоен порядковый номер. Таким образом, можно дать следующее определение: </p>
+<p><span class="opredelenia">Массив</span> – структурированный типданных, состоящий из фиксированного числа элементов одного типа.</p>
+<p>Массив на рисунке имеет 8 элементов, каждый элемент сохраняет число вещественного типа. Элементы в массиве пронумерованы от 1 до 8. Такого рода
+массив, представляющий собой просто список данных одного и того же типа,называют <span class="opredelenia">простым</span> или <span class="opredelenia">одномерным</span> массивом. Для доступа к данным,
+хранящимся в определенном элементе массива, необходимо указать имя массива и порядковый номер этого элемента, называемый <span class="opredelenia">индексом</span></p>
+<br><div class="imgg4"><img src="images_3/3.2.png" alt="">
+</div>
+<h2><a style="color:#4D4D4D" name="vodvivod">Ввод-вывод элементов одномерного массива</a></h2>
+<br><p>При вводе массива необходимо последовательно вводить 1-й, 2-й, 3-й и т.д. элементы массива, аналогичным образом поступить и при выводе.Следовательно,
+необходимо организовать цикл. Ниже приведены схемы алгоритмов вывода эллементов массива.</p>
+<div class="imgg-right"><img src="images_3/3.2_2.png" alt=""></div>
+<div class="imgg-left"><img src="images_3/3.2_3.png" alt=""></div><br>
+<br><p>Как видно, безусловный цикл удобно использовать для обработки всего массива, и в дальнейшем при выполнении таких операций будем применять
+именно его. Вывод массива организуется аналогично вводу. Рассмотрим   несколько   примеров   обработки   массивов.   Алгоритмы,   с
+помощью которых обрабатывают одномерные массивы, похожи на обработку последовательностей (вычисление суммы, произведения, поиск элементов по
+определенному признаку, выборки и т. д.). Отличие заключается в том, что в массиве   одновременно   доступны   все   его   компоненты,   поэтому   становится
+возможной,  например,   сортировка  его   элементов   и  другие,  более   сложные преобразования.</p>
+<br><p>Математические операции над массивами выполняются поэлементно. Создается новый массив, который заполняется результатами действия оператора.</p>
+<div class="prog" style="height:450px">
+<p><span class="orange">>>></span> import numpy as np</p>
+<p><span class="orange">>>></span> a = np.array([20, 30, 40, 50])</p>
+<p><span class="orange">>>> </span>b = np.arange(4)</p>
+<p><span class="orange">>>> </span>a + b</p>
+<p>array([20,31,42,53])</p>
+<p><span class="orange">>>></span> a - b</p>
+<p>array([20, 29, 38, 47])</p>
+<p><span class="orange">>>> </span>a * b</p>
+<p>array([0,30,80,150])</p>
+<p><span class="orange"> >>></span> a / b </p>
+<p><span class="grey"> # При делении на 0 возвращается inf (бесконечность)</span></p>
+<p>array([inf,30.,20.,16.66666667])</p>
+<p>&lt;string&gt;:1: RuntimeWarning: divide by zero encountered in true_divide</p>
+<p><span class="orange">>>></span> a ** b</p>
+<p>array([     1,     30,   1600, 125000])</p>
+<p><span class="orange">>>></span> a % b  # При взятии остатка от деления на 0 возвращается 0</p>
+<p>string:1: RuntimeWarning: divide by zero encountered in remainder</p>
+<p>array([0, 0, 0, 2])</p>
+</div>
+<br><p>Для этого, естественно, массивы должны быть одинаковых размеров.</p>
+<div class="prog" style="height:180px">
+<p><span class="orange">>>></span> c = np.array([[1, 2, 3], [4, 5, 6]])</p>
+<p><span class="orange">>>></span> d = np.array([[1, 2], [3, 4], [5, 6]])</p>
+<p><span class="orange">>>></span> c + d</p>
+<p>Traceback (most recent call last):</p>
+<p>File "input", line 1, in &lt;module&gt;</p>
+<p>ValueError: operands could not be broadcast together with shapes (2,3) (3,2)</p>
+</div>
+<br><p>Также можно производить математические операции между массивом и числом. В этом случае к каждому элементу прибавляется (или что вы там делаете) это число.</p>
+<div class="prog" style="height:190px">
+<p><span class="orange">>>></span> a + 1</p>
+<p>array([21, 31, 41, 51])</p>
+<p><span class="orange">>>></span> a ** 3</p>
+<p>array([  8000,  27000,  64000, 125000])</p>
+<p><span class="orange">>>></span> a &lt; 35 </p>
+<p><span class="grey"># И фильтрацию можно проводить</span></p>
+<p>array([ True,  True, False, False], dtype=bool)</p>
+</div>
+<br><p>NumPy также предоставляет множество математических операций для обработки массивов:</p>
+<div class="prog" style="height:190px">
+<p><span class="orange">>>></span>  np.cos(a)</p>
+<p>array([ 0.40808206,  0.15425145, -0.66693806,  0.96496603])</p>
+<p><span class="orange">>>></span>  np.arctan(a)</p>
+<p>array([ 1.52083793,  1.53747533,  1.54580153,  1.55079899])</p>
+<p><span class="orange">>>></span>  np.sinh(a)</p>
+<p>array([  2.42582598e+08,   5.34323729e+12,   1.17692633e+17,2.59235276e+21])</p>
+</div>
+<p>Полный список можно посмотреть <a target="_blank" href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">здесь</a>.</p>
+<br><p> Многие унарные операции, такие как, например, вычисление суммы всех элементов массива, представлены также и в виде методов класса ndarray.</p>
+<div class="prog" style="height:240px">
+<p><span class="orange">>>></span>a = np.array([[1, 2, 3], [4, 5, 6]])</p>
+<p><span class="orange">>>></span>np.sum(a)</p>
+<p>21</p>
+<p><span class="orange">>>></span>a.sum()</p>
+<p>21</p>
+<p><span class="orange">>>></span> a.min()</p>
+<p>1</p>
+<p><span class="orange">>>></span> a.max()</p>
+<p>6</p>
+</div>
+<br><p>По умолчанию, эти операции применяются к массиву, как если бы он был списком чисел, независимо от его формы. Однако, указав параметр axis, можно применить операцию для указанной оси массива:</p>
+<div class="prog" style="height:200px">
+<p><span class="orange">>>></span> a.min(axis=0)</p>
+<p><span class="grey"># Наименьшее число в каждом столбце</span></p>
+<p>array([1, 2, 3])</p>
+<p><span class="orange">>>></span> a.min(axis=1) </p>
+<p><span class="grey"># Наименьшее число в каждой строке</span></p>
+<p>array([1, 4])</p>
+</div>
+<p>Источники:</p>
+<p>1.<a target="_blank" href="https://pythonworld.ru/moduli/modul-array-massivy-v-python.html">https://pythonworld.ru/moduli/modul-array-massivy-v-python.html</a></p>
+<p>2.<a target="_blank" href="http://docplayer.ru/30495116-Lekciya-3-algoritmy-obrabotki-odnomernyh-massivov-postroeniya-algoritmov-prednaznachennyh-dlya-obrabotki-odnomernyh-massivov.html">http://docplayer.ru/30495116-Lekciya-3-algoritmy-obrabotki-odnomernyh-massivov-postroeniya-algoritmov-prednaznachennyh-dlya-obrabotki-odnomernyh-massivov.html</a></p>
+<p>3.<a target="_blank" href="https://pythonworld.ru/numpy/2.html">https://pythonworld.ru/numpy/2.html</a></p>
+</div>
+</article>
+
+		<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+	<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+</footer>
+</body>
+</html>

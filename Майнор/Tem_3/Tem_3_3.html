@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_3.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height:3890px">
+
+
+		<aside style="height:3890px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" class="active">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+
+		<h1 id="h11">Двумерные массивы. Алгоритмы обработки двумерных массивов</h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#modyl">Матрицы </a></p>
+<p>•<a href="#algoritmi">Ввод двумерного массива </a></p>
+<p>•<a href="#vodvivod">Вывод и обработка двумерного массива </a></p>
+
+
+<h2><a style="color:#4D4D4D" name="modyl">Матрицы</a></h2>
+<br><p>Часто в задачах приходится хранить прямоугольные таблицы с данными. Такие таблицы называются матрицами или двумерными массивами. В языке программирования Питон таблицу можно представить в виде списка строк, каждый элемент которого является в свою очередь списком, например, чисел. Например, создать числовую таблицу из двух строк и трех столбцов можно так:</p>
+<div class="prog" style="height: 80px">
+<p>A = [[1, 2, 3], [4, 5, 6]]</p>
+</div>
+<p>Здесь первая строка списка A[0] является списком из чисел [1, 2, 3]. </p>
+<p>То есть A[0][0] == 1, значение A[0][1] == 2, A[0][2] == 3, A[1][0] == 4, A[1][1] == 5, A[1][2] == 6.</p>
+
+<br><h2><a style="color:#4D4D4D" name="algoritmi">Ввод двумерного массива</a></h2>
+<p>Пусть программа получает на вход двумерный массив в виде n строк, каждая из которых содержит m чисел, разделенных пробелами. Как их считать? Например, так:</p>
+<div class="prog" style="height: 160px">
+<p><span class="grey"># в первой строке ввода идёт количество строк массива</span></p>
+<p><span class="orange">>>></span> n = int(input()) </p>
+<p><span class="orange">>>></span> a = []</p>
+<p><span class="orange">>>></span> for i in range(n):</p>
+<p><span class="orange">>>></span> a.append([int(j) for j in input().split()])</p>
+</div>
+<p>Или, без использования сложных вложенных вызовов функций:</p>
+<div class="prog" style="height: 220px">
+<p><span class="grey"># в первой строке ввода идёт количество строк массива</span></p>
+<p><span class="orange">>>></span> n = int(input()) </p>
+<p><span class="orange">>>></span> a = []</p>
+<p><span class="orange">>>></span> for i in range(n):</p>
+<p><span class="orange">>>></span>     row = input().split()</p>
+<p><span class="orange">>>></span>     for i in range(len(row)):</p>
+<p><span class="orange">>>></span>         row[i] = int(row[i])</p>
+<p><span class="orange">>>></span>     a.append(row)</p>
+</div>
+<p>Можно сделать то же самое и при помощи генератора:</p>
+<div class="prog" style="height: 100px">
+<p><span class="grey"># в первой строке ввода идёт количество строк массива</span></p>
+<p>n = int(input()) </p>
+<p>a = [[int(j) for j in input().split()] for i in range(n)]</p>
+</div>
+<br><h2><a style="color:#4D4D4D" name="vodvivod">Вывод и обработка двумерного массива</a></h2>
+<br><p>Для обработки и вывода списка как правило используется два вложенных цикла. Первый цикл по номеру строки, второй цикл по элементам внутри строки. Например, вывести двумерный числовой список на экран построчно, разделяя числа пробелами внутри одной строки, можно так:</p>
+<div class="prog" style="height: 130px">
+<p>for i in range(len(A)):</p>
+<p>    for j in range(len(A[i]): </p>
+<p>        print(A[i][j], end=' ')</p>
+<p>     print()</p></div>
+<p>То же самое, но циклы не по индексу, а по значениям списка:</p>
+<div class="prog" style="height: 130px">
+<p>for row in A: </p>
+<p>    for elem in row: </p>
+<p>        print(elem, end=' ') </p>
+<p>    print()</p></div>
+<p>Для вывода одной строки можно воспользоваться методом join:</p>
+<div class="prog" style="height: 100px">
+<p>for row in A: </p>
+<p>    print(' '.join(list(map(str, row))))</p></div>
+<p>Используем два вложенных цикла для подсчета суммы всех чисел в списке:</p>
+<div class="prog" style="height: 130px">
+<p>S = 0 </p>
+<p>for i in range(len(A)): </p>
+<p>    for j in range(len(A[i])): </p>
+<p>       S += A[i][j]</p></div>
+<p>Или то же самое с циклом не по индексу, а по значениям строк:</p>
+<div class="prog" style="height: 110px">
+<p>S = 0 </p>
+<p>for row in A: </p>
+<p>    for elem in row: </p>
+<p>        S += elem</p>
+</div>
+<br><p>Пусть дан квадратный массив из <span class="pink">n</span> строк и <span class="pink">n</span> столбцов. Необходимо элементам, находящимся на главной диагонали, проходящей из левого верхнего угла в правый нижний
+(то есть тем элементам <span class="pink">a[i][j]</span>, для которых <span class="pink">i==j</span>) присвоить значение <span class="pink">1</span>, элементам, находящимся выше главной диагонали – значение <span class="pink">0</span>, элементам, находящимся ниже главной диагонали – значение <span class="pink">2</span>.
+То есть необходимо получить такой массив (пример для <span class="pink">n==4</span>):</p>
+<div class="prog" style="height: 150px">
+<p>1 0 0 0</p>
+<p>2 1 0 0</p>
+<p>2 2 1 0</p>
+<p>2 2 2 1</p></div>
+<p>Рассмотрим несколько способов решения этой задачи. Элементы, которые лежат выше главной диагонали – это элементы <span class="pink">a[i][j]</span>, для которых <span class="pink">i</span>, а для элементов ниже главной диагонали <span class="pink">i>j</span>.
+Таким образом, мы можем сравнивать значения <span class="pink">i</span> и <span class="pink">j</span> и по ним определять значение <span class="pink">A[i][j]</span>. Получаем следующий алгоритм:
+<div class="prog" style="height: 330px">
+<p>n = 4</p>
+<p>a = [[0] * n for i in range(n)]</p>
+<p>for i in range(n):</p>
+<p>    for j in range(n):</p>
+<p>        if i &lt; j:</p>
+<p>            a[i][j] = 0</p>
+<p>        elif i &gt; j:</p>
+<p>            a[i][j] = 2</p>
+<p>       else:</p>
+<p>           a[i][j] = 1</p>
+<p>for row in a:</p>
+<p>    print(' '.join([str(elem) for elem in row]))</p>
+</div>
+<p>Данный алгоритм плох, поскольку выполняет одну или две инструкции <span class="pink">if</span> для обработки каждого элемента. Если мы усложним алгоритм, то мы сможем обойтись вообще без условных инструкций.
+Сначала заполним главную диагональ, для чего нам понадобится один цикл:</p>
+<div class="prog" style="height: 100px">
+<p>for i in range(n):</p>
+<p>    a[i][i] = 1</p>
+</div>
+<p>Затем заполним значением <span class="pink">0</span> все элементы выше главной диагонали, для чего нам понадобится в каждой из строк с номером <span class="pink">i</span> присвоить значение элементам <span class="pink">a[i][j]</span> для <span class="pink">j=i+1, ..., n-1</span>.
+Здесь нам понадобятся вложенные циклы:</p>
+<div class="prog" style="height: 120px">
+<p>for i in range(n):</p>
+<p>    for j in range(i + 1, n):</p>
+<p>        a[i][j] = 0</p>
+</div>
+<p>Аналогично присваиваем значение <span class="pink">2</span> элементам <span class="pink">a[i][j]</span> для <span class="pink">j=0, ..., i-1</span>:
+<div class="prog" style="height: 120px">
+<p>for i in range(n):</p>
+<p>    for j in range(0, i):</p>
+<p>        a[i][j] = 2</p>
+</div>
+<p>Можно также внешние циклы объединить в один и получить еще одно, более компактное решение:</p>
+<div class="prog" style="height: 300px">
+<p>n = 4</p>
+<p>a = [[0] * n for i in range(n)]</p>
+<p>for i in range(n):</p>
+<p>    for j in range(0, i):</p>
+ <p>       a[i][j] = 2</p>
+ <p>   a[i][i] = 1</p>
+ <p>   for j in range(i + 1, n):</p>
+<p>        a[i][j] = 0</p>
+<p>for row in a:</p>
+ <p>   print(' '.join([str(elem) for elem in row]))</p>
+ </div>
+<p>А вот такое решение использует операцию повторения списков для построения очередной строки списка. <span class="pink">i-я</span> строка списка состоит из <span class="pink">i</span> чисел <span class="pink">2</span>, затем идет одно число <span class="pink">1</span>, затем идет <span class="pink">n-i-1</span> число <span class="pink">0</span>:</p>
+<p>А можно заменить цикл на генератор:</p>
+<div class="prog" style="height: 200px">
+<p>n = 4</p>
+<p>a = [0] * n</p>
+<p>a = [[2] * i + [1] + [0] * (n - i - 1) for i in range(n)]</p>
+<p>for row in a:</p>
+<p>    print(' '.join([str(elem) for elem in row]))</p>
+</div>
+<p>Источники:</p>
+<p>1.<a target="_blank" href="http://pythontutor.ru/lessons/2d_arrays/">http://pythontutor.ru/lessons/2d_arrays/</a></p>
+<p>2.<a target="_blank" href="https://foxford.ru/wiki/informatika/dvumernye-massivy-v-python">https://foxford.ru/wiki/informatika/dvumernye-massivy-v-python</a></p>
+</div>
+</article>
+
+		<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+	<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+</footer>
+</body>
+</html>

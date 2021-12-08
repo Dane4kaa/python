@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="../Tem_2/Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 3800px">
+
+
+		<aside style="height: 3800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html" >Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html" class="active">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Создание GUI с помощью библиотеки tkinter</h1><br><br>
+<h2>Содержание страницы:</h2><br><br>
+<p>•    <a href="#1">Создание главного экрана</a></p>
+<p>•	<a href="#2">Создаем первое окно</a></p>
+<br><br>
+<p>Эта библиотека называется <span class="blue">tkinter</span>. С помощью этой библиотеки можно создать вполне приличное меню пользователя и внешний вид программы. Ярким примером использования библиотеки <span class="blue">tkinter</span> для создания приложений служит окно интерпретатора Python — IDLE, или окно встроенного текстового редактора. Все они собраны с помощью этой библиотеки.</p><br>
+<p>На этом уроке мы рассмотрим как создавать главное окно. В нем будут размещаться все остальные элементы — поля ввода, кнопки и др. Создание этих элементов мы рассмотрим в следующих статьях.</p><br><br>
+
+
+<h2><a style="color:#4D4D4D" name="1">Создание главного экрана</a></h2><br>
+<p>Для создания главного экрана нужно импортировать библиотеку tkinter (учтите, что эта библиотека не входит в стандартный интерпретатор в Linux-системах).  Импортировать библиотеку можно несколькими способами:</p><br>
+<p>•    import tkinter</p>
+<p>•    import tkinter as tk</p>
+<p>•    from tkinter import *</p><br>
+<p>Каждый способ имеет как свои преимущества, так и недостатки. Давайте рассмотрим их.</p>
+<div class="prog" style="height: 70px">
+<p><span class="orange">>>></span>import <span class="blue">tkinter</span></p>
+</div>
+<p>Этот способ, если исходить из надежности, самый правильный. Доступ к модулям и элементам этой библиотеки осуществляется через префикс tkinter.имя_элемента. Это позволяет более свободно использовать поле имен переменных — едва ли вы создадите переменную с таким именем.</p>
+<div class="prog" style="height: 70px">
+<p><span class="orange">>>></span>import <span class="blue">tkinter</span> as tk</p>
+</div>
+<p>Этой инструкцией мы импортируем библиотеку tkinter, но доступ к ней теперь осуществляется через префикс tk.имя_элемента. Это может быть полезно, если вы, к примеру, используете еще одну библиотеку графического интерфейса, имеющую аналогичные классы. Например библиотека ttk.</p>
+<div class="prog" style="height: 70px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+</div>
+<p>Этот способ нужно использовать лишь в самых простых программах. Дело в том, что при таком способе использования, в пространство имен программы импортируются всем названия классов этой библиотеки. Теперь можно напрямую обращаться к названиям классов для создания графических элементов. Но это существенно ограничивает список доступных для использования элементов (вы не сможете использовать переменные Button, Text и пр. без ущерба для работы программы).</p>
+
+
+<br><br><h2><a style="color:#4D4D4D" name="2">Создаем первое окно</a></h2><br>
+<p>Окно для программы Python создается в несколько строчек. Так как наша программа будет минимальной, используем третий способ для импорта библиотеки tkinter. Наберите в текстовом редакторе и сохраните под именем Test_gui.py.</p>
+<div class="prog" style="height: 140px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Вы увидите новое окно с заголовком tk. Это и сеть ваше первое окно графического интерфейса. Все остальные элементы будут так или иначе находится в нем. Окно можно развернуть на весь экран, свернуть и закрыть. Всего одна строка. Просто, не правда ли?</p><br>
+<p>Последняя строка, root.mainloop(), запускает цикл обновления созданного окна. Это позволяет программе отслеживать действия пользователя и выполнять соответствующие действия. Она всегда должна быть последней.</p><br>
+<p>REM: Кстати, из-за того, что главное окно работает в цикле, использование в функциях цикла «while True», скорее всего,  приведет к неработоспособности программы.  Старайтесь использовать цикл for, если требуется выполнить какое-то количество повторяющихся действий!</p><br>
+<p>Теперь давайте изменим заголовок нашего окна. Для этого измените код программы следующим образом:</p><br>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.title('Приложение')</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Запустите программу. Появится уже знакомое окно, но в заголовке у нее теперь отображается строка «Приложение». Следующим шагом мы изменим фоновый цвет окна. Добавьте в программу еще одну строку:</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.title('Приложение')</p>
+<p><span class="orange">>>></span>root['bg'] = 'green'</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Запустите программу. Фон окна стал зеленым. Кроме прямого указания цвета (к тому же количество доступных имен цветов сильно ограничено) можно указывать нужный цвет в 16-ричном формате:</p>
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.title('Приложение')</p>
+<p><span class="orange">>>></span>root['bg'] = '#aa00aa'</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Эта программа создаст окно с фиолетовым фоном.</p><br>
+<p>Кроме заголовка и цвета фона, окну можно указать размеры окна в пикселях. Наберите и запустите следующие программу:</p><br>
+<div class="prog" style="height: 220px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.title('Приложение')</p>
+<p><span class="orange">>>></span>root['bg'] = '#aa00aa'</p>
+<p><span class="orange">>>></span>root.geometry('400x400')</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>После запуска вы увидите окно с фиолетовым фоном, размером 400×400 пикселей. Так можно заранее задавать размеры окна при запуске программы. Однако, иногда бывает нужно, чтобы при запуске программы она разворачивалась во весь экран. Как этого добиться? Ведь существует несколько основных разрешений для мониторов домашних ПК — и они существенно отличаются как по количеству пикселей, так и по соотношению сторон. Чтобы добиться этого, воспользуйтесь следующими командами:</p>
+<div class="prog" style="height: 210px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root = Tk()</p>
+<p><span class="orange">>>></span>root.title('Приложение')</p>
+<p><span class="orange">>>></span>root['bg'] = '#aa00aa'</p>
+<p><span class="orange">>>></span>root.state('zoomed')</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Вновь созданное окно автоматически развернется на весь экран при запуске. Фактически, это готовое окно вашего будущего приложения.  нем еще нет меню, кнопок и других элементов — все это появится по мере того, как вы будете изучать этот цикл статей.</p><br>
+<p>После запуска, вы наверное заметили, что хотя окно и развернулось во весь экран, панель «Windows» все равно остается доступной. Что бы полностью занять всю доступную поверхность экрана, следует несколько изменить код программы:</p><br>
+<div class="prog" style="height: 210px">
+<p><span class="orange">>>></span>from <span class="blue">tkinter</span> import *</p>
+<p><span class="orange">>>></span>root=Tk()</p>
+<p><span class="orange">>>></span>root['bg'] = '#aa00aa'</p>
+<p><span class="orange">>>></span>root.overrideredirect(1)</p>
+<p><span class="orange">>>></span>root.state('zoomed')</p>
+<p><span class="orange">>>></span>root.mainloop()</p>
+</div>
+<p>Перед запуском учтите, что окно заполнит собой весе пространство экрана- не будет видно ни панели «Windows», ни кнопок закрытия окна. Не волнуйтесь, окно не заблокировало систему — нажмите комбинацию клавиш «Arl+Tab» и переключитесь в Windows. Закройте окно интерпретатора IDLE и окно tkinter пропадет тоже.</p>
+<br><br><p> Источники: <a  target="_blank" href="https://writegamepython.wordpress.com/2018/01/29/1-%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-gui-%D1%81-%D0%BF%D0%BE%D0%BC%D0%BE%D1%89%D1%8C%D1%8E-tkinter/"> https://writegamepython.wordpress.com/</a></p>
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>

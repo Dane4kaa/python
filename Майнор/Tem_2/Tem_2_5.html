@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 4800px">
+
+
+		<aside style="height: 4800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" class="active">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Циклические конструкции. Цикл с параметром. Решение задач</h1><br><br>
+<h2>Содержание страницы:</h2><br><br>
+<p>•    <a href="#1">Цикл for</a></p>
+<p>•	<a href="#2">Функция range</a></p>
+<p>•	<a href="#3">Вложенные циклы</a></p>
+<p>•	<a href="#4">Выход из цикла. break и continue</a></p>
+<br><br>
+
+<h2><a style="color:#4D4D4D" name="1">Цикл for</a></h2><br>
+<p>Циклы — это инструкции, выполняющие одну и туже последовательность действий, пока действует заданное условие.</p>
+<br><p>Цикл <span class="pink_border">for</span>, также называемый циклом с параметром, в языке Питон богат возможностями. В цикле <span class="pink_border">for</span> указывается переменная и множество значений, по которому будет пробегать переменная. Множество значений может быть задано списком, кортежем, строкой или диапазоном.</p>
+<br><p>Вот простейший пример использования цикла, где в качестве множества значений используется кортеж:</p>
+<div class="prog" style="height: 140px">
+<p><span class="orange">>>></span>i = 1</p>
+<p><span class="orange">>>></span>for color in 'red', 'orange', 'yellow', 'green', 'cyan', 'blue', 'violet':</p>
+<p><span class="orange">>>></span>&emsp;    print('#', i, ' color of rainbow is ', color, sep = '')</p>
+<p><span class="orange">>>></span> &emsp;   i += 1</p>
+</div>
+<p>В этом примере переменная <span class="pink">color</span> последовательно принимает значения <span class="pink">'red'</span>, <span class="pink">'orange'</span> и т.д. В теле цикла выводится сообщение, которое содержит название цвета, то есть значение переменной <span class="pink">color</span>, а также номер итерации цикла  число, которое сначала равно 1, а потом увеличивается на один (инструкцией <span class="pink">i += 1</span> с каждым проходом цикла.</p>
+<br><p>Инструкция <span class="pink">i += 1</span> эквивалентна конструкции <span class="pink">i = i + 1</span> (это просто сокращенная запись). Такую сокращенную запись можно использовать для всех арифметических операций: <span class="pink">*=, -=, /=, %=</span>...</p>
+<br><p>В списке значений могут быть выражения различных типов, например:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span>for i in 1, 2, 3, 'one', 'two', 'three':</p>
+ <p><span class="orange">>>></span>&emsp;   print(i)</p>
+</div>
+<p>При первых трех итерациях цикла переменная <span class="pink">i</span>  будет принимать значение типа <span class="pink">int</span> , при последующих трех — типа <span class="pink">str</span> .</p><br>
+
+
+<h2><a style="color:#4D4D4D" name="2">Функция range</a></h2><br>
+<p>Как правило, циклы <span class="pink">for</span> используются либо для повторения какой-либо последовательности действий заданное число раз, либо для изменения значения переменной в цикле от некоторого начального значения до некоторого конечного.</p>
+<br><p>Для повторения цикла некоторое заданное число раз n можно использовать цикл <span class="pink">for</span> вместе с функцией <span class="pink">range</span>:</p>
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span>for i in range(4): <span class="grey"> # равносильно инструкции for i in 0, 1, 2, 3:</span></p>
+<p>&emsp;   <span class="grey"> # здесь можно выполнять циклические действия</span></p>
+<p><span class="orange">>>></span>&emsp;    print(i)</p>
+<p><span class="orange">>>></span>&emsp;    print(i ** 2)</p>
+<p><span class="grey"># цикл закончился, поскольку закончился блок с отступом</span></p>
+<p><span class="orange">>>></span>print('Конец цикла')</p>
+</div>
+<p>В качестве n может использоваться числовая константа, переменная или произвольное арифметическое выражение (например, 2 ** 10). Если значение n равно нулю или отрицательное, то тело цикла не выполнится ни разу.</p><br>
+<p>Функция range может также принимать не один, а два параметра. Вызов range(a, b) означает, что индексная переменная будеть принимать значения от a до b - 1, то есть первый параметр функции range, вызываемой с двумя параметрами, задает начальное значение индексной переменной, а второй параметр — первое значение, которое индексная переменная принимать <span class="opredelenia">не будет</span>. Если же a≥b, то цикл не будет выполнен ни разу. Например, для того, чтобы просуммировать значения чисел от 1 до n можно воспользоваться следующей программой:</p>
+<div class="prog" style="height: 190px">
+<p><span class="orange">>>></span>sum = 0</p>
+<p><span class="orange">>>></span>n = 5</p>
+<p><span class="orange">>>></span>for i in range(1, n + 1):</p>
+<p><span class="orange">>>></span> &emsp;   sum += i</p>
+<p><span class="orange">>>></span>print(sum)</p>
+</div>
+<p>
+В этом примере переменная i принимает значения 1, 2, ..., n, и значение переменной sum последовательно увеличивается на указанные значения.</p><br>
+<p>Наконец, чтобы организовать цикл, в котором индексная переменная будет уменьшаться, необходимо использовать функцию range с тремя параметрами. Первый параметр задает начальное значение индексной переменной, второй параметр — значение, до которого будет изменяться индексная переменная (не включая его!), а третий параметр — величину изменения индексной переменной. Например, сделать цикл по всем нечетным числам от 1 до 99 можно при помощи функции range(1, 100, 2), а сделать цикл по всем числам от 100 до 1 можно при помощи range(100, 0, -1).</p><br>
+<p>Более формально, цикл for i in range(a, b, d) при d &gt; 0 задает значения индексной переменной i = a, i = a + d, i = a + 2 * d и так для всех значений, для которых i &lt; b. Если же d &lt; 0, то переменная цикла принимает все значения i &gt; b.</p><br>
+<h2><a style="color:#4D4D4D" name="3">Вложенные циклы</a></h2><br>
+<p>Одни циклы внутри себя могут содержать другие циклы. Рассмотрим на примере вывода таблицы умножения:</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span>for i in range(1, 10):</p>
+<p><span class="orange">>>></span>&emsp;    for j in range(1, 10):</p>
+<p><span class="orange">>>></span>&emsp;&emsp;        print(i * j, end="\t")</p>
+<p><span class="orange">>>></span>&emsp;    print("\n")</p>
+</div>
+<p>Внешний цикл for i in range(1, 10) срабатывает 9 раз, так как в коллекции, возвращаемой функцией range, 9 чисел. Внутренний цикл for j in range(1, 10) срабатывает 9 раз для одной итерации внешнего цикла, и соответственно 81 раз для всех итераций внешнего цикла.
+В каждой итерации внутреннего цикла на консоль будет выводится произведение чисел i и j.</p><br>
+
+
+<h2><a style="color:#4D4D4D" name="4">Выход из цикла. break и continue</a></h2><br>
+<p>Для управления циклом мы можем использовать специальные операторы <span class="pink_border">break</span> и <span class="pink_border">continue</span>. Оператор <span class="pink_border">break</span> осуществляет выход из цикла. А оператор <span class="pink_border">continue</span> выполняет переход к следующей итерации цикла.</p>
+<p>Оператор <span class="pink_border">break</span> может использоваться, если в цикле образуются условия, которые несовместимы с его дальнейшим выполнением. Рассмотрим следующий пример:</p>
+<div class="prog" style="height: 280px">
+<p><span class="orange">>>></span> <span class="grey">#! Программа Обменный пункт</span></p>
+<p><span class="orange">>>></span> print("Для выхода нажмите Y")</p>
+<p><span class="orange">>>></span> while True:</p>
+<p><span class="orange">>>></span> &emsp;   data = input("Введите сумму для обмена: ")</p>
+<p><span class="orange">>>></span> &emsp;   if data.lower() == "y":</p>
+<p><span class="orange">>>></span> &emsp;&emsp;       break  # выход из цикла</p>
+<p><span class="orange">>>></span> &emsp;   money = int(data)</p>
+<p><span class="orange">>>></span> &emsp;   cache = round(money / 56, 2)</p>
+<p><span class="orange">>>></span> &emsp;   print("К выдаче", cache, "долларов")</p>
+<p><span class="orange">>>></span> print("Работа обменного пункта завершена")</p>
+ </div>
+ <p>Здесь мы имеем дело с бесконечным циклом, так как условие while True всегда истинно и всегда будет выполняться. Это популярный прием для создания программ, которые должны выполняться неопределенно долго.</p><br>
+  <p>В самом цикле получаем ввод с консоли. Мы предполагаем, что пользователь будет вводить число - условную сумму денег для обмена. Если пользователь вводит букву "Y" или "y", то с помощью оператора break выходим из цикла и прекращаем работу программы. Иначе делим введенную сумму на обменный курс, с помощью функции round округляем результат и выводим его на консоль. И так до бесконечности, пока пользователь не захочет выйти из программы, нажав на клавишу Y.</p><br>
+   <p>Консольный вывод программы:</p><br>
+<div class="prog" style="height: 180px">
+<p>   Для выхода нажмите Y</p>
+<p>Введите сумму для обмена: 20000</p>
+<p>К выдаче 357.14 долларов</p>
+<p>Введите сумму для обмена: Y</p>
+<p>Работа обменного пункта завершена</p>
+ </div>
+ <p>Но что, если пользователь введет отрицательное число? В этом случае программа также выдаст отрицательный результат, что не является корректным поведением. И в этом случае перед вычислением мы можем проверить значение, меньше ли оно нуля, и если меньше, с помощью оператора continue выполнить переход к следующей итерации цикла без его завершения:</p>
+<div class="prog" style="height: 340px">
+ <p><span class="orange">>>></span><span class="grey">#! Программа Обменный пункт</span></p>
+ <p><span class="orange">>>></span>print("Для выхода нажмите Y")</p>
+ <p><span class="orange">>>></span>while True:</p>
+ <p><span class="orange">>>></span> &emsp;   data = input("Введите сумму для обмена: ")</p>
+ <p><span class="orange">>>></span> &emsp;   if data.lower() == "y":</p>
+ <p><span class="orange">>>></span> &emsp; &emsp;       break  # выход из цикла</p>
+ <p><span class="orange">>>></span> &emsp;   money = int(data)</p>
+ <p><span class="orange">>>></span> &emsp;   if money &lt; 0:</p>
+ <p><span class="orange">>>></span> &emsp; &emsp;       print("Сумма должна быть положительной!")</p>
+ <p><span class="orange">>>></span> &emsp; &emsp;       continue</p>
+ <p><span class="orange">>>></span> &emsp;   cache = round(money / 56, 2)</p>
+ <p><span class="orange">>>></span>&emsp;    print("К выдаче", cache, "долларов")</p>
+ <p><span class="orange">>>></span>print("Работа обменного пункта завершена")</p>
+  </div>
+  <p>Также обращаю внимание, что для определения, относится ли инструкция к блоку while или к вложенной конструкции if, опять же используются отступы.И в этом случае мы уже не сможем получить результат для отрицательной суммы:</p>
+ <div class="prog" style="height: 260px">
+ <p> Для выхода нажмите Y</p>
+ <p>Введите сумму для обмена: -20000</p>
+ <p>Сумма должна быть положительной!</p>
+ <p>Введите сумму для обмена: 20000</p>
+ <p>К выдаче 357.14 долларов</p>
+ <p>Введите сумму для обмена: y</p>
+ <p>Работа обменного пункта завершена</p>
+</div>
+
+<p> Источники: <a  target="_blank" href="https://metanit.com/python/tutorial/2.7.php"> https://metanit.com/python/tutorial/2.7.php</a></p>
+<a  target="_blank" href="http://pythontutor.ru/lessons/for_loop/"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; http://pythontutor.ru/lessons/for_loop/</a>
+
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

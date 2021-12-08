@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_1.css" />
+<title>Python</title>
+<style>
+.htl{
+	margin-left: 100px;
+}
+</style>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 5500px">
+
+
+		<aside style="height: 5500px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+
+			 <nav id="n1">
+			 <ul>
+			 <li><a href="../Tem_1.html" class="active">Основы программирования на Python</a></li>
+			 <li><a href="../Tem_2.html">Основные управляющие конструкции</a></li>
+			 <li><a href="../Tem_3.html">Массивы</a></li>
+			 <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+			 <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+			 <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+		 </ul>
+	 </nav>
+
+		 <nav id="n2">
+			 <ul>
+			 <li><a href="../Upr.html">Упражнения</a></li>
+		 </ul>
+		 </nav>
+
+		 <nav id="n3">
+		 <ul>
+			 <li><a href="../Books.html">Книги о Python</a></li>
+			 <li><a href="../Curses.html">Курсы Python</a></li>
+			 <li><a href="../Video.html">Видеоуроки Python</a></li>
+		 </ul>
+	 </nav>
+	</aside >
+		<div id="main1">
+<h1 id="h11">Типы данных на язык Python</h1>
+<br><h2>Содержание страницы:</h2><br>
+<ol type="I" class='htl'><li><a href="#chisla">	Числа </a></li>
+<li><a href="#spiski">Списки</a></li>
+<li><a href="#kor">Кортежи</a></li>
+<li><a href="#str">Строки</a></li>
+<li><a href="#mnozh">Множества</a></li>
+<li><a href="#slovari">Словари</a></li>
+<li><a href="#preobraz">Преобразование типов данных</a></li></ol>
+
+<br><p>Каждое значение в Python имеет свой тип. Поскольку всё в Python — объекты, типы являются классами, а значения — экземплярами (объектами) этих классов.В Python 2 типы и классы — разные понятия, в то время как в Python 3 это одно и то же.
+В Python есть разные типы, давайте рассмотрим самые основные.</p>
+<br><br>
+<h2><a style="color:#4D4D4D" name="chisla">Числа</a></h2>
+<br><p>Целые числа, числа с плавающей запятой и комплексные числа относятся к группе чисел. В Python они представлены классами <span class="pink_border">int</span>, <span class="pink_border">float</span> и <span class="pink_border">complex</span>.
+Мы можем использовать функцию type(), чтобы узнать класс переменной или значения, и функцию isinstance() для проверки принадлежности объекта определённому классу:</p>
+<div class="prog">
+<p><span class="orange">>>></span> a = <span class="pink">5</span></p>
+<p><span class="orange">>>></span> print(a, "is of type", type(a))</p>
+<p><span class="pink">5</span> is of type &lt;class 'int'&gt;</p>
+<p><span class="orange">>>></span> a = <span class="pink">2.0</span></p>
+<p><span class="orange">>>></span> print(a, "is of type", type(a))</p>
+<p><span class="pink">2.0</span> is of type &lt;class 'float'&gt;</p>
+<p><span class="orange">>>></span> a = <span class="pink">1+2j</span></p>
+<p><span class="orange">>>></span> print(a, "is complex number?", isinstance(<span class="pink">1+2j</span>, complex))</p>
+<p>(<span class="pink">1+2j</span>) is complex number? True</p>
+</div><br>
+<p style="text-indent: 1.5em">Целые числа могут быть любой длины, они ограничиваются лишь доступной памятью.
+Числа с плавающей запятой имеют ограниченную точность. Визуально разницу между целым числом и числом с плавающей запятой можно заметить в консоли по наличию точки: <span class="pink_border">1</span> — целое число, <span class="pink_border">1.0</span> — с плавающей запятой.
+Комплексные числа записываются в форме <span class="pink_border">x+yj</span>, где <span class="pink_border">x</span> — действительная часть числа, а <span class="pink_border">y</span> — мнимая. Вот несколько примеров:
+</p>
+<div class="prog">
+<p><span class="orange">>>></span> a = <span class="pink">1234567890123456789</span></p>
+<p><span class="orange">>>></span> a</p>
+<p><span class="pink">1234567890123456789</span></p>
+<p><span class="orange">>>></span> b = <span class="pink">0.1234567890123456789</span></p>
+<p><span class="orange">>>></span> b</p>
+<p><span class="pink">0.12345678901234568</span></p>
+<p><span class="orange">>>></span> c = <span class="pink">1+2j</span></p>
+<p><span class="orange">>>></span> c</p>
+<p>(<span class="pink">1+2j</span>)</p>
+</div><br>
+<p>Обратите внимание, что значение переменной <span class="pink_border">b</span> было усечено.</p>
+<br><br><h2><a style="color:#4D4D4D" name="spiski">Списки</a></h2>
+<br>
+<p>Список представляет собой упорядоченную последовательность элементов. Он очень гибкий и является одним из самых используемых типов в Python. Элементы списка не обязательно должны быть одного типа.
+<br><br>Объявить список довольно просто. Внутрь квадратных скобок помещаются элементы списка, разделённые запятой:
+</p>
+<div class="prog" style="height: 60px">
+<p><span class="orange">>>></span> a = [<span class="pink">1</span>, <span class="pink">2.2</span>, 'python']</p>
+</div><br>
+<p>Мы можем использовать оператор [] для извлечения элемента (такая операция называется «доступ по индексу») или диапазона элементов (такая операция назвается «извлечение среза») из списка. В Python индексация начинается с нуля:</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span> a = [<span class="pink">5</span>,<span class="pink">10</span>,<span class="pink">15</span>,<span class="pink">20</span>,<span class="pink">25</span>,<span class="pink">30</span>,<span class="pink">35</span>,<span class="pink">40</span>]</p>
+<p><span class="orange">>>></span> print("a[<span class="pink">2</span>] =", a[<span class="pink">2</span>])</p>
+<p>a[<span class="pink">2</span>] = <span class="pink">15</span></p>
+<p><span class="orange">>>></span> print("a[<span class="pink">0</span>:<span class="pink">3</span>] =", a[<span class="pink">0</span>:<span class="pink">3</span>])</p>
+<p>a[<span class="pink">0</span>:<span class="pink">3</span>] = [<span class="pink">5</span>, <span class="pink">10</span>, <span class="pink">15</span>]</p>
+<p><span class="orange">>>></span> print("a[<span class="pink">5</span>:] =", a[<span class="pink">5</span>:])</p>
+<p>a[5:] = [<span class="pink">30</span>, <span class="pink">35</span>, <span class="pink">40</span>]
+</div><br>
+<p>Списки являются изменяемым типом, т.е. значения его элементов можно изменить:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> a = [<span class="pink">1</span>,<span class="pink">2</span>,<span class="pink">3</span>]</p>
+<p><span class="orange">>>></span> a[<span class="pink">2</span>] = <span class="pink">4</span></p>
+<p><span class="orange">>>></span> a</p>
+<p>[<span class="pink">1</span>, <span class="pink">2</span>, <span class="pink">4</span>]</p>
+</div><br>
+<h2><a style="color:#4D4D4D" name="kor">Кортежи</a></h2>
+<br>
+<p>Так же как и список, кортеж (tuple) является упорядоченной последовательностью элементов. Вся разница заключается в том, что кортежи неизменяемы.
+<br><br>Кортежи используются для защиты данных от перезаписи и обычно работают быстрее, чем списки, т.к. их нельзя изменять.
+<br><br>Для создания кортежа нужно поместить внутрь круглых скобок элементы, разделённые запятой:
+</p>
+<div class="prog" style="height: 60px">
+<p><span class="orange">>>></span> t = (<span class="pink">5</span>,'program', <span class="pink">1+3j</span>)</p>
+</div><br>
+<p>Мы можем использовать оператор извлечения среза <span class="pink_border">[ ]</span> для извлечения элементов, но мы не можем менять их значения:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> t = (<span class="pink">5</span>,'program', <span class="pink">1+3j</span>)</p>
+<p><span class="orange">>>></span> print("t[<span class="pink">1</span>] =", t[<span class="pink">1</span>])</p>
+<p>t[<span class="pink">1</span>] = program</p>
+<p><span class="orange">>>></span> print("t[<span class="pink">0</span>:<span class="pink">3</span>] =", t[<span class="pink">0</span>:<span class="pink">3</span>])</p>
+<p>t[<span class="pink">0</span>:<span class="pink">3</span>] = (<span class="pink">5</span>, 'program', (<span class="pink">1+3j</span>))</p>
+<p><span class="grey"># Приводит к ошибке, т.к.</span></p>
+<p><span class="grey"># кортежи неизменяемы</span></p>
+<p><span class="orange">>>></span> t[<span class="pink">0</span>] = <span class="pink">10</span></p>
+</div><br>
+<br><br>
+<h2><a style="color:#4D4D4D" name="str">Строки</a></h2><br>
+<p>Строка представляет собой последовательность символов. Мы можем использовать одинарные или двойные кавычки для создания строки.  Многострочные строки можно обозначить тройными кавычками, <span class="pink_border">' ' '</span> или <span class="pink_border">" " "</span>:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> s = "Простая строка"</p>
+<p><span class="orange">>>></span> s = ' ' 'многострочная </p>
+<p>строка' ' '</p>
+</div><br>
+<p>Как и в случае со списками и кортежами, мы можем использовать оператор <span class="pink_border">[ ]</span> и со строками. Стоит отметить, что строки в Python относятся к категории неизменяемых последовательностей, то есть все функции и методы могут лишь создавать новую строку.</p>
+<br><h2> <a style="color:#4D4D4D" name="mnozh">Множества</a></h2><br>
+<p>Множество является неупорядоченной уникализированной последовательностью. Объявляется множество с помощью элементов, разделённых запятой, внутри фигурных скобок:</p>
+разделённых запятой, внутри фигурных скобок:
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> a = {<span class="pink">5</span>,<span class="pink">2</span>,<span class="pink">3</span>,<span class="pink">1</span>,<span class="pink">4</span>}</p>
+<p><span class="grey"># вывод переменной множества</span></p>
+<p><span class="orange">>>></span> print("a =", a)</p>
+<p>a = {<span class="pink">1</span>, <span class="pink">2</span>, <span class="pink">3</span>, <span class="pink">4</span>, <span class="pink">5</span>}</p>
+<p><span class="grey"># тип данных переменной а</span></p>
+<p><span class="orange">>>></span> print(type(a))</p>
+<p>&lt;class 'set'&gt;</p>
+</div><br>
+<p>Над множествами можно выполнять такие операции, как объединение и пересечение. Т.к. элементы в множестве должны быть уникальны, они автоматически удаляют дубликаты:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> a = {<span class="pink">1,2,2,3,3,3</span>}</p>
+<p><span class="orange">>>></span> a</p>
+<p>{<span class="pink">1</span>, <span class="pink">2</span>, <span class="pink">3</span>}</p>
+</div><br>
+<p>Поскольку множество является неупорядоченной последовательностью, оператор извлечения среза здесь не работает:</p>
+<div class="prog" style="height: 140px">
+<p><span class="orange">>>></span> a = {<span class="pink">1</span>,<span class="pink">2</span>,<span class="pink">3</span>}</p>
+<p><span class="orange">>>></span> a[<span class="pink">1</span>]</p>
+<p>Traceback (most recent call last):</p>
+<p>File "&lt;stdin&gt;", line <span class="pink">1</span>, in &lt;module&gt; </p>
+<p>TypeError: 'set' object does not support indexing</p>
+</div><br>
+<h2><a style="color:#4D4D4D" name="slovari">Словари</a></h2>
+<br>
+<p>Словари — неупорядоченные наборы пар ключ-значение.</p>
+<p>Они используются, когда нужно сопоставить каждому из ключей значение и иметь возможность быстро получать доступ к значению, зная ключ. В других языках словари обычно называются <span class="pink_border">map</span>, <span class="pink_border">hash</span> или <span class="pink_border">object</span>. Словари оптимизированы для извлечения данных. Чтобы извлечь значение, нужно знать ключ.</p>
+<p>Словарь объявляется парами элементов в форме ключ:значение, заключенными в фигурные скобки:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> d = {<span class="pink">1</span>:'value', 'key':<span class="pink">2</span>}
+<p><span class="orange">>>></span> type(d)
+<p>&lt;class 'dict'&gt;</p>
+</div><br>
+<p>Значение может быть любого типа, а вот ключ — только неизменяемого.
+<br>Мы используем ключ, чтобы получить соответствующее ему значение. Но не наоборот:</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> d = {<span class="pink">1</span>:'value', 'key':<span class="pink">2</span>}</p>
+<p><span class="orange">>>></span> print("d[<span class="pink">1</span>] =", d[<span class="pink">1</span>]);</p>
+<p>d[<span class="pink">1</span>] = value</p>
+<p><span class="orange">>>></span> print("d['key'] =", d['key']);</p>
+<p>d['key'] = <span class="pink">2</span></p>
+<p><span class="grey"># Приводит к ошибке</span></p>
+<p><span class="orange">>>></span> print("d[<span class="pink">2</span>] =", d[<span class="pink">2</span>]);</p>
+</div><br>
+<h2><a style="color:#4D4D4D" name="preobraz">Преобразование типов данных</a></h2><br>
+<p>Мы можем преобразовывать значения из одного типа в другой с помощью таких функций, как <span class="pink_border">int()</span>, <span class="pink_border">float()</span>, <span class="pink_border">str()</span> и т.д.</p>
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span> float(<span class="pink">5</span>)</p>
+<p><span class="pink">5.0</span></p>
+</div><br>
+<p>При преобразовании числа с плавающей запятой в целое будет утеряна часть после запятой:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> int(<span class="pink">10.6</span>)</p>
+<p>10</p>
+<p><span class="orange">>>></span> int(<span class="pink">-10.6</span>)</p>
+<p>-10</p>
+</div><br>
+<p>Для преобразования из/в строку должны использоваться совместимые значения:</p>
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span> float('2.5')</p>
+<p><span class="pink">2.5</span></p>
+<p><span class="orange">>>></span> str(<span class="pink">25</span>)</p>
+<p>'25'</p>
+<p><span class="orange">>>></span> int('1p')</p>
+<p>Traceback (most recent call last):</p>
+<p>File "&lt;stdin&gt;", line <span class="pink">1</span>, in &lt;module&gt;</p>
+<p>ValueError: invalid literal for int() with base <span class="pink">10</span>: '1p'</p>
+</div><br>
+<p>Можно даже преобразовывать одну последовательность в другую:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> set([<span class="pink">1</span>,<span class="pink">2</span>,<span class="pink">3</span>])</p>
+<p>{<span class="pink">1</span>,<span class="pink"> 2</span>, <span class="pink">3</span>}</p>
+<p><span class="orange">>>></span> tuple({<span class="pink">5</span>,<span class="pink">6</span>,<span class="pink">7</span>})</p>
+<p>(<span class="pink">5</span>, <span class="pink">6</span>, <span class="pink">7</span>)</p>
+<p><span class="orange">>>></span> list('hello')</p>
+<p>['h', 'e', 'l', 'l', 'o']</p>
+</div><br>
+<p>Для преобразования списка из символов обратно в строку нельзя вызвать <span class="pink_border">str(список)</span>, так как в результате мы получим строковое представление списка (наподобие того, что мы видим, когда выводим список на экран). Вместо этого нужно сделать следующее:</p>
+<div class="prog" style="height: 60px">
+<p>' '.join(['h', 'e', 'l', 'l', 'o'])</p>
+</div><br>
+<p>Для преобразования в словарь каждый элемент последовательности должен быть парой:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> dict([[<span class="pink">1</span>,<span class="pink">2</span>],[<span class="pink">3</span>,<span class="pink">4</span>]])</p>
+<p>{<span class="pink">1</span>: <span class="pink">2</span>, <span class="pink">3</span>: <span class="pink">4</span>}</p>
+<p><span class="orange">>>></span> dict([(<span class="pink">3</span>,<span class="pink">26</span>),(<span class="pink">4</span>,<span class="pink">44</span>)])</p>
+<p>{<span class="pink">3</span>: <span class="pink">26</span>, <span class="pink">4</span>: <span class="pink">44</span>}</p>
+</div><br>
+<p>Источник: <a target="_blank" href="https://tproger.ru/translations/python-data-types/">https://tproger.ru/translations/python-data-types/</a></p>
+</div>
+
+
+
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>

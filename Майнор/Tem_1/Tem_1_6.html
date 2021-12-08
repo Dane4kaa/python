@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_1.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 2100px">
+
+
+		<aside style="height: 2100px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" class="active">Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Арифметические операции. Действительные (вещественные) числа</h1><br><br>
+<h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">	Вещественные числа (float)</a></p>
+<p>•	<a href="#spiski">Дополнительные методы</a></p>
+<p>•	<a href="#kor">Модуль math</a></p>
+<p>•	<a href="#k">Модуль random</a></p>
+<br><br>
+<h2><a name="chisla" style="color:#4D4D4D">Вещественные числа (float)</a></h2><br>
+<p>Вещественные числа поддерживают те же операции, что и целые. Однако (из-за представления чисел в компьютере) вещественные числа неточны, и это может привести к ошибкам:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1 + 0.1</p>
+<p>0.9999999999999999</p>
+</div>
+<p>Для высокой точности используют другие объекты (например Decimal и Fraction)).
+Также вещественные числа не поддерживают длинную арифметику:</p>
+<div class="prog" style="height: 170px">
+<p><span class="orange">>>></span> a = 3 ** 1000</p>
+<p><span class="orange">>>></span> a + 0.1</p>
+<p>Traceback (most recent call last):</p>
+<p>  File "", line 1, in</p>
+<p>OverflowError: int too large to convert to float</p>
+</div>
+<p>Простенькие примеры работы с числами:</p>
+<div class="prog" style="height: 240px">
+<p><span class="orange">>>></span> c = 150</p>
+<p><span class="orange">>>></span> d = 12.9</p>
+<p><span class="orange">>>></span> c + d</p>
+<p>162.9</p>
+<p><span class="orange">>>></span> p = abs(d - c)  # Модуль числа</p>
+<p><span class="orange">>>></span> print(p)</p>
+<p>137.1</p>
+<p><span class="orange">>>></span> round(p)  # Округление</p>
+<p>137
+</div><br>
+<h2><a name="spiski" style="color:#4D4D4D">Дополнительные методы</a></h2><br>
+<p><span class="pink_border">float.as_integer_ratio()</span> - пара целых чисел, чьё отношение равно этому числу.</p>
+<p><span class="pink_border">float.is_integer()</span> - является ли значение целым числом.</p>
+<p><span class="pink_border">float.hex()</span> - переводит float в hex (шестнадцатеричную систему счисления).</p>
+<p><span class="pink_border">classmethod float.fromhex(s)</span> - float из шестнадцатеричной строки.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> (10.5).hex()</p>
+<p>'0x1.5000000000000p+3'</p>
+<p><span class="orange">>>></span> float.fromhex('0x1.5000000000000p+3')</p>
+<p>10.5</p>
+</div>
+<p>Помимо стандартных выражений для работы с числами (а в Python их не так уж и много), в составе Python есть несколько полезных модулей.</p>
+<p><a name="kor" style="color:#4D4D4D">Модуль</a> <span class="blue">math</span> предоставляет более сложные математические функции.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span>  import math</p>
+<p><span class="orange">>>></span>  math.pi</p>
+<p>3.141592653589793</p>
+<p><span class="orange">>>></span>  math.sqrt(85)</p>
+<p>9.219544457292887</p>
+</div>
+<p><a name="k" style="color:#4D4D4D">Модуль </a><span class="blue">random</span>  реализует генератор случайных чисел и функции случайного выбора.</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> import random</p>
+<p><span class="orange">>>></span> random.random()</p>
+<p>0.15651968855132303</p>
+</div>
+<br><p>Подробнее о модуле random: <a target="_blank" href="http://ps.readthedocs.io/ru/latest/random.html">http://ps.readthedocs.io/ru/latest/random.html</a></p>
+<br><p>Источник: <a  target="_blank" href="https://pythonworld.ru/tipy-dannyx-v-python/chisla-int-float-complex.html">https://pythonworld.ru</a></p>
+
+</div>
+
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

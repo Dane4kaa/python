@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" >
+<link rel="Stylesheet" type="text/css" href="Tem_4.css" >
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 5300px">
+
+
+		<aside style="height: 5300px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html" class="active">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+<h1><span>Списки. Основные понятия и операции</span> </h1>
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#chisla">Что такое списки? </a></p>
+<p>•<a href="#spiski">Операции со списками</a></p>
+<p>•<a href="#kor">Встроенные функции</a></p>
+
+<br><h2><a style="color:#4D4D4D" name="chisla">Что такое списки?</a></h2>
+<br><p>	Для группировки множества элементов в питоне используется список <span class="pink">list</span>, который может быть записан как индексированная последовательность значений, разделенных запятыми, заключенная в квадратные скобки.
+Списки имеют произвольную вложенность, т.е. могут включать в себя любые вложенные списки. Физически список представляет собой массив указателей (адресов) на его элементы. С точки зрения производительности <span class="pink">(performance)</span> списки имеют следующие особенности.</p>
+<div class="spisok" style="height: 167px">
+<p>• Время доступа к элементу есть величина постоянная и не зависит от размера списка. </p>
+<p>• Время на добавление одного элемента в конец списка есть величина постоянная.</p>
+<p>• Время на вставку зависит от того, сколько элементов находится справа от него, т.е. чем ближе элемент к концу списка, тем быстрее идет его вставка.</p>
+<p>• Удаление элемента происходит так же, как и в пункте 3.</p>
+<p>• Время, необходимое на реверс списка, пропорционально его размеру — O(n).</p>
+<p>• Время, необходимое на сортировку, зависит логарифмически от размера списка.</p>
+</div>
+<br><p>Элементы списка не обязательно должны быть одного типа. Приведем вариант статического определения списка:</p>
+<div class="prog" style="height: 40px">
+<p>	<span class="orange">>>></span> lst = ['spam', 'drums', 100, 1234]</p>
+</div>
+<br><p>Как и для строк, для списков нумерация индексов начинается с нуля. Для списка можно получить срез, объединить несколько списков и так далее:</p>
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span> lst[1:3]</p>
+<p>['drums', 100]</p>
+</div>
+<br><p>Можно менять как отдельные элементы списка, так и диапазон:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> lst[3] = 'piano'</p>
+<p><span class="orange">>>></span> lst[0:2] = [1,2]</p>
+<p><span class="orange">>>></span> lst</p>
+<p>[1, 2, 100, 'piano']</p>
+</div>
+<br><p>Вставка:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> lst[1:1] = ['guitar','microphone']</p>
+<p><span class="orange">>>></span> lst</p>
+<p>[1, 'guitar', 'microphone', 2, 100, 'piano']</p>
+</div>
+<br><p>Можно сделать выборку из списка с определенной частотой:</p>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span> numbers = [1,2,3,4,5,6,7,8,9,0]</p>
+<p><span class="orange">>>></span> numbers[::4]</p>
+<p>[1, 5, 9]</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="spiski">Операции со списками</a></h2>
+<br><p>К операциям мы относим:</p>
+<div class="spisok" style="height: 120px">
+<p>•	копирование списка;</p>
+<p>•	сложение и умножение списков;</p>
+<p>•	итерацию — проход в цикле по элементам списка;</p>
+<p>•	конструктор списков (list comprehension);</p>
+<p>•	распаковку списка — sequence unpacking.</p>
+</div>
+<br><p><span class="opredelenia">Создание копии списка.</span></p>
+<p>1.<span class="pink">L1 = L2[:]</span> — создание второй копии списка. Здесь создается вторая копия обьекта.</p>
+<p>2.<span class="pink">L1 = list(L2)</span> — тоже создание второй копии списка.</p>
+<p>3.<span class="pink">L1 = L2</span> — создание второй ссылки, а не копии. 3-й вариант показывает, что создаются две ссылки на один и тот же обьект, а не две копии.</p>
+<br><p><span class="opredelenia">Сложение или конкатенация списков:</span></p>
+<p>1.<span class="pink">L1 + L2</span></p>
+<br><p><span class="opredelenia">Умножение, или повтор списков:</span></p>
+<p>1.<span class="pink">L1 * 2</span></p>
+<br><p>Итерацию списков в питоне можно делать несколькими различными способами:</p>
+<br><p>•	простая итерация списка:</p>
+<div class="prog" style="height: 40px">
+<p>	for x in L:</p>
+</div>
+<br><p>•	сортированная итерация:</p>
+<div class="prog" style="height: 40px">
+<p>	for x in sorted(L):</p>
+</div>
+<br><p>•	уникальная итерация:</p>
+<div class="prog" style="height: 40px">
+<p>	for x in set(L):</p>
+</div>
+<br><p>•	итерация в обратном порядке:</p>
+<div class="prog" style="height: 40px">
+<p>	for x in reversed(L):</p>
+</div>
+<br><p>•	исключающая итерация — например, вывести элементы 1-го списка, которых нет во 2-м списке:</p>
+<div class="prog" style="height: 40px">
+<p>	for item in set(L).difference(L2)</p>
+</div>
+<br><p>Для генерации списков, кроме статической формы, можно использовать конструктор списков — <span class="pink">list comprehension</span> — цикл внутри квадратных скобок — на примере списка квадратов первых <span class="pink">10</span>  натуральных чисел:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> a = [ i*i for i in range(1,10)]</p>
+<p><span class="orange">>>></span> a</p>
+<p>[1, 4, 9, 16, 25, 36, 49, 64, 81]</p>
+</div>
+<p>Конструктор может быть условным — найдем квадраты четных натуральных чисел:
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> a = [ i*i for i in range(1,10) if i % 2 == 0]</p>
+<p><span class="orange">>>></span> a</p>
+<p>[4, 16, 36, 64]</p>
+</div>
+<p>С помощью конструктора решим конкретную задачу — отсортируем слова в предложении в порядке их длительности:</p>
+<div class="prog" style="height: 170px">
+<p>words = ' to perform the task of sorting the words in a string by their length'.split()</p>
+<p>wordlens = [(len(word), word) for word in words]</p>
+<p>wordlens.sort()</p>
+<p>print ' '.join(w for (_, w) in wordlens)</p>
+<p><span class="orange">>>></span> a by in of to the the task their words length string perform sorting</p>
+</div>
+<p>Операция <span class="opredelenia">Sequence unpacking</span> — присваивание списку переменных списка значений:</p>
+<div class="prog" style="height: 40px">
+<p>a, b = [1,2]</p>
+</div>
+
+<br><h2><a style="color:#4D4D4D" name="kor">Встроенные функции</a></h2>
+<br><p>Списки имеют большой набор функций:</p>
+<div class="spisok" style="height: 300px">
+<p>•<span class="opredelenia">append , extend</span> — добавление;</p>
+<p>•<span class="opredelenia">insert</span> — вставка;</p>
+<p>•<span class="opredelenia">index</span> — найти индекс первого вхождения конкретного элемента;</p>
+<p>•<span class="opredelenia">count </span>— подсчет повторов элемента;</p>
+<p>•<span class="opredelenia">remove , del</span> — удаление элемента;</p>
+<p>•<span class="opredelenia">sort</span> — сортировка;</p>
+<p>•<span class="opredelenia">reverse </span>— реверс;</p>
+<p>•<span class="opredelenia">pop</span> — извлечение элемента;</p>
+<p>•<span class="opredelenia">len</span> — длина списка;</p>
+<p>•<span class="opredelenia">max</span> — максимальный элемент;</p>
+<p>•<span class="opredelenia">min</span> — минимальный элемент;</p>
+<p>•<span class="opredelenia">оператор in</span> — проверка элемента на вхождение.</p>
+</div>
+<br><p>Добавлять можно как одинарные элементы, так и набор элементов. Списки могут быть вложенными — вложенный список добавим в конец с помощью <span class="pink">append()</span>:</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span> lst = [1, 'guitar', 'microphone', 2, 100, 'piano']</p>
+<p><span class="orange">>>></span> lst2 = ['sintezator','drums']</p>
+<p><span class="orange">>>></span> lst.append(lst2)</p>
+<p><span class="orange">>>></span> lst</p>
+<p>[1, 'guitar', 'microphone', 2, 100, 'piano', ['sintezator', 'drums']]</p>
+</div>
+
+<p>Элемент можно добавить в произвольную позицию списка с помощью метода <span class="opredelenia">insert</span>:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span> lst.insert(0,'vocal')</p>
+<p><span class="orange">>>></span> lst</p>
+<p>['vocal', 1, 'guitar', 'microphone', 2, 100, 'piano', ['sintezator', 'drums']]</p>
+</div>
+
+<p>Для проверки, является ли элемент членом списка, есть <span class="opredelenia">оператор in</span>:</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span> 2 in lst</p>
+<p>True</p>
+<p><span class="orange">>>></span> 10 in lst</p>
+<p>False</p>
+</div>
+
+<p><span class="opredelenia">index()</span> — взять элемент списка по индексу:</p>
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span> lst.index('guitar')</p>
+<p>2</p>
+</div>
+
+<p><span class="opredelenia">count()</span> — подсчет числа повторов какого-то элемента:
+<div class="prog" style="height: 80px">
+<p><span class="orange">>>></span> lst.count('vocal')</p>
+<p>1</p>
+</div>
+
+<p><span class="opredelenia">remove()</span> — удаление конкретного элемента:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span> lst.remove(100)</p>
+<p><span class="orange">>>></span> lst</p>
+<p>['vocal', 1, 'guitar', 'microphone', 2, 'piano', ['sintezator', 'drums']]</p>
+</div>
+
+<p><span class="opredelenia">del</span> — удаление по индексу:</p>
+<div class="prog" style="height: 80px">
+<p>del lst[1]</p>
+</div>
+
+<p>При удалении нужно помнить о том, что нельзя одновременно делать итерацию по списку — последствия будут непредсказуемы.</p>
+<p><span class="opredelenia">sort()</span> — сортировка списка:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span> lst.sort()</p>
+<p><span class="orange">>>></span> lst</p>
+<p>[1, 2, ['sintezator', 'drums'], 'guitar', 'microphone', 'piano', 'vocal']</p>
+</div>
+
+<p><span class="opredelenia">reverse()</span> — реверс списка:1</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span> lst.reverse()</p>
+<p><span class="orange">>>></span> lst</p>
+<p>['vocal', 'piano', 'microphone', 'guitar', ['sintezator', 'drums'], 2, 1]</p>
+</div>
+
+<p><span class="opredelenia">pop()</span> — извлечение элемента из списка, функция без параметра удаляет по умолчанию последний элемент списка, в качестве параметра можно поставить произвольный индекс:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span> lst.pop()</p>
+<p><span class="orange">>>></span> lst</p>
+<p>['vocal', 'piano', 'microphone', 'guitar', ['sintezator', 'drums'], 2]</p>
+</div>
+
+<p><span class="opredelenia">len()</span> — длина списка:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> len(lst)</p>
+<p>6</p>
+</div>
+
+<p><span class="opredelenia">max()</span> — максимальный элемент списка:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> max(lst)</p>
+<p>'vocal'</p>
+</div>
+
+<p><span class="opredelenia">min()</span> — минимальный элемент списка:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> min(lst)</p>
+<p>2</p>
+</div>
+
+<p><span class="opredelenia">extend()</span> — аналогичен <span class="opredelenia">append()</span>, добавляет последовательность элементов:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span> lst.extend([3,4])</p>
+<p><span class="orange">>>></span> lst</p>
+<p>['vocal', 'piano', 'microphone', 'guitar', ['sintezator', 'drums'], 2, 3, 4]</p>
+</div>
+<br><br><p>Источник: <a target="_blank" href="https://www.ibm.com/developerworks/ru/library/l-python_part_3/index.html">https://www.ibm.com/developerworks/ru/library/l-python_part_3/index.html</a></p>
+</div>
+	</article>
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>

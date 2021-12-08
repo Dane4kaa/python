@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 4300px">
+
+
+		<aside style="height: 4300px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" class="active">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+	</aside>
+		<div id="main1">
+<h1 id="h11">Условный оператор. Блоки, отступы. Полная и неполная форма</h1><br><br>
+
+<h2>Содержание страницы:</h2><br><br>
+<p>•    <a href="#1">Конструкция if </a></p>
+<p>•	<a href="#2">Конструкция if – else</a></p>
+<p>•	<a href="#3">Конструкция if – elif – else</a></p>
+<p>•	<a href="#4">Операторы break, continue</a></p>
+<br>
+<br>
+<p>Условная инструкция <span class="pink_border">if-elif-else</span> (её ещё иногда называют оператором ветвления) - основной инструмент выбора в Python. Проще говоря, она выбирает, какое действие следует выполнить, в зависимости от значения переменных в момент проверки условия.Возможны следующие варианты использования.</p>
+<br><br><h2><a style="color:#4D4D4D" name="1">Конструкция if</a></h2><br>
+<div class="prog" style="height: 180px">
+<p>if выражение:</p>
+<p>   	&emsp;	&emsp; инструкция_1</p>
+<p>   	&emsp;	&emsp; инструкция_2</p>
+<p>   	&emsp;	&emsp; ...	</p>
+<p>    	&emsp;	&emsp;инструкция_n</p>
+</div>
+<p>После оператора if  записывается выражение. Если это выражение истинно, то выполняются инструкции, определяемые данным оператором. Выражение является истинным, если его результатом является число не равное нулю, непустой объект, либо логическое True. После выражения нужно поставить двоеточие “:”.</p>
+<p><span class="opredelenia">ВАЖНО:</span> блок кода, который необходимо выполнить, в случае истинности выражения, отделяется четырьмя пробелами слева!</p>
+<p>Примеры:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span>if 1:</p>
+<p><span class="orange">>>></span>&emsp;   print("hello 1")</p>
+<p>hello 1</p>
+</div>
+<div class="prog" style="height: 120px">
+<p><p><span class="orange">>>></span>a = 3</p>
+<p><span class="orange">>>></span>if a == 3:</p>
+<p><span class="orange">>>></span>&emsp;    print("hello 2")</p>
+<p>hello 2</p>
+</div>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span>a = 3</p>
+<p><span class="orange">>>></span>if a > 1:</p>
+<p><span class="orange">>>></span>&emsp;   print("hello 3")</p>
+<p>hello 3</p>
+</div>
+<div class="prog" style="height: 120px">
+<p><span class="orange">>>></span>lst = [1, 2, 3]</p>
+<p><span class="orange">>>></span>if lst :</p>
+<p><span class="orange">>>></span>&emsp;   print("hello 4")</p>
+<p>hello 4</p>
+</div>
+
+
+<br><h2><a style="color:#4D4D4D" name="2">Конструкция if – else</a></h2><br>
+<p>Бывают случаи, когда необходимо предусмотреть альтернативный вариант выполнения программы. Т.е. при истинном условии нужно выполнить один набор инструкций, при ложном – другой. Для этого используется конструкция if – else.</p>
+<div class="prog" style="height: 270px">
+<p>if выражение:</p>
+<p>   	&emsp;	&emsp;     инструкция_1</p>
+<p>   	&emsp;	&emsp;     инструкция_2</p>
+<p>   	&emsp;	&emsp;     ...</p>
+<p>   	&emsp;	&emsp;     инструкция_n</p>
+<p>else:</p>
+<p>   	&emsp;	&emsp;     инструкция_a</p>
+<p>   	&emsp;	&emsp;     инструкция_b</p>
+<p>   	&emsp;	&emsp;     ...</p>
+<p>   	&emsp;	&emsp;     инструкция_x</p>
+</div>
+<p>Примеры.</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>a = 3</p>
+<p><span class="orange">>>></span>if a > 2:</p>
+<p><span class="orange">>>></span>&emsp;    print("H")</p>
+<p><span class="orange">>>></span>else:</p>
+<p><span class="orange">>>></span>&emsp;    print("L")</p>
+<p>H</p>
+</div>
+<div class="prog" style="height: 200px">
+<p><span class="orange">>>></span>a = 1</p>
+<p><span class="orange">>>></span>if a > 2:</p>
+<p><span class="orange">>>></span>&emsp;    print("H")</p>
+<p><span class="orange">>>></span>else:</p>
+<p><span class="orange">>>></span>&emsp;    print("L")</p>
+<p>L</p>
+</div>
+<p>Условие такого вида можно записать в строчку, в таком случае оно будет представлять собой <span class="blue">тернарное выражение</span>.</p>
+<div class="prog" style="height: 150px">
+<p><span class="orange">>>></span>a = 17</p>
+<p><span class="orange">>>></span>b = True if a > 10 else False</p>
+<p><span class="orange">>>></span>print(b)</p>
+<p>True</p>
+</div>
+
+
+<h2><a style="color:#4D4D4D" name="3">Конструкция if – elif – else</a></h2><br>
+<p>Для реализации выбора из нескольких альтернатив можно использовать конструкцию <span class="pink_border">if – elif – else</span>.</p>
+<div class="prog" style="height: 220px">
+<p>if выражение_1:</p>
+<p>   	&emsp;	&emsp;         инструкции_(блок_1)</p>
+<p>elif выражение_2:</p>
+ <p>   	&emsp;	&emsp;        инструкции_(блок_2)</p>
+<p>elif выражение_3:</p>
+ <p>   	&emsp;	&emsp;        инструкции_(блок_3)</p>
+<p>else:</p>
+  <p>   &emsp;	&emsp;   инструкции_(блок_4)</p>
+  </div>
+<p>Пример.</p>
+<div class="prog" style="height: 210px">
+<p><span class="orange">>>></span>a = int(input("введите число:"))</p>
+<p><span class="orange">>>></span>if a &lt; 0:</p>
+ <p><span class="orange">>>></span>&emsp;      print("Neg")</p>
+<p><span class="orange">>>></span>elif a == 0:</p>
+ <p><span class="orange">>>></span>&emsp;      print("Zero")</p>
+<p><span class="orange">>>></span>else:</p>
+  <p><span class="orange">>>></span>&emsp;    print("Pos")</p>
+</div>
+<p>Если пользователь введет число меньше нуля, то будет напечатано “Neg“, равное нулю – “Zero“, большее нуля – “Pos“.</p>
+
+
+<br><h2><a style="color:#4D4D4D" name="4">Операторы break, continue</a></h2>
+<p>При работе с циклами используются операторы break  и continue.
+<br>Оператор break  предназначен для досрочного прерывания работы цикла while.
+<br>Пример.
+</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>a = 0</p>
+<p><span class="orange">>>></span>while a >= 0:</p>
+ <p><span class="orange">>>></span>&emsp;    if a == 7:</p>
+ <p><span class="orange">>>></span>&emsp;&emsp;        break</p>
+ <p><span class="orange">>>></span>&emsp;    a += 1</p>
+ <p><span class="orange">>>></span>&emsp;    print("A")</p>
+</div>
+<p>В приведенном выше коде, выход из цикла произойдет при достижении переменной a  значения 7. Если бы не было этого условия, то цикл выполнялся бы бесконечно.</p>
+<p>Оператор <span class="pink_border">continue</span>  запускает цикл заново, при этом код, расположенный после данного оператора, не выполняется.</p>
+<p>Пример.</p>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>a = -1</p>
+<p><span class="orange">>>></span>while a &lt; 10:</p>
+<p><span class="orange">>>></span>&emsp;    a += 1</p>
+<p><span class="orange">>>></span>&emsp;    if a >= 7:</p>
+<p><span class="orange">>>></span>&emsp; &emsp;        continue</p>
+<p><span class="orange">>>></span> &emsp;   print("A")</p>
+</div>
+<p>При запуске данного кода символ “А” будет напечатан 7 раз, несмотря на то, что всего будет выполнено 11 проходов цикла.</p>
+
+
+
+
+<br><br>
+<h2>Практическая работа</h2><br>
+<p>1. Напишите программу (файл TakeInput.py), которая просит пользователя что-нибудь ввести с клавиатуры. Если он вводит какие-нибудь данные, то на экране должно выводиться сообщение "ОК". Если он не вводит данные, а просто нажимает Enter, то программа ничего не выводит на экран.</p>
+
+<p>2. Напишите программу (файл PosNeg.py), которая запрашивает у пользователя число. Если оно больше нуля, то в ответ на экран выводится число 1. Если введенное число не является положительным, то на экран должно выводиться -1.</p>
+<br><br>
+<p>Источники:<a  target="_blank" href="https://devpractice.ru/python-lesson-5-if-while-for-operators/"> https://devpractice.ru/python-lesson-5-if-while-for-operators/</a></p>
+	             <br>  <a  target="_blank" href="  https://younglinux.info/python/if.php">  https://younglinux.info/python/if.php</a>
+</div>
+	</article>
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

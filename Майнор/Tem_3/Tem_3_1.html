@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_3.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height:2800px">
+
+
+		<aside style="height:2800px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" class="active">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+
+		<h1 id="h11">Вложенные циклы.Решение задач</h1>
+
+<br><h2>Содержание страницы:</h2><br>
+<p>•<a href="#cintakcis">Синтаксис </a></p>
+<p>•<a href="#zadachi">Задачи</a></p>
+
+
+<br>
+<h2><a style="color:#4D4D4D" name="cintakcis">Синтаксис</a></h2><br><br>
+<p>Ситаксис вложенных циклов в Python схематически выглядит так:</p>
+<div class="prog" style="height: 110px">
+<p><span class="orange">>>></span>for переменная in последовательность:</p>
+<p><span class="orange">>>></span>&emsp;действие(я)</p>
+</div>
+<br>
+<p>Ещё одна особенность вложенных циклов – это то, что вы можете использовать любой тип цикла в другом типе цикла. Например - можно цикл for вложить в цикл while и наоборот.</p>
+<p>Пример:</p>
+<br>
+<p>В этом примере используется вложенный цикл для поиска простых чисел в диапазоне от 2 до 100:</p>
+<div class="prog" style= "height: 300px">
+<p><span class="orange">>>></span>i = 2</p>
+<p><span class="orange">>>></span>	while (i &lt;100):</p>
+<p><span class="orange">>>></span>	&emsp;   j = 2/</p>
+<p><span class="orange">>>></span>	<span class="orange">>>></span>&emsp;   while (j &lt;= (i/j)):</p>
+<p><span class="orange">>>></span> if not (i%j): break/</p>
+<p><span class="orange">>>></span>	 &emsp;    j = j + 1/</p>
+<p><span class="orange">>>></span>  if (j > i/j) : print i, " is prime"</p>
+<p><span class="orange">>>></span>  &emsp;   i = i + 1</p>
+<p> <span class="orange">>>></span> &emsp;     print "Good bye!"</p></div>
+<br>
+<p>Результат его выполнения выглядит так:</p>
+<div class="prog" style="height:650px">
+<p>2 is prime</p>
+<p>3 is prime</p>
+<p>5 is prime</p>
+<p>7 is prime</p>
+<p>11 is prime</p>
+<p>13 is prime</p>
+<p>17 is prime</p>
+<p>19 is prime</p>
+<p>23 is prime</p>
+<p>29 is prime</p>
+<p>31 is prime</p>
+<p>37 is prime</p>
+<p>41 is prime</p>
+<p>43 is prime</p>
+<p>47 is prime</p>
+<p>53 is prime</p>
+<p>59 is prime</p>
+<p>61 is prime</p>
+<p>67 is prime</p>
+<p>71 is prime</p>
+<p>73 is prime</p>
+<p>79 is prime</p>
+<p>83 is prime</p>
+<p>89 is prime</p>
+<p>97 is prime</p>
+<p>Good bye!</p></div>
+<br>
+
+
+<h2><a style="color:#4D4D4D" name="zadachi">Задачи</a></h2><br><br>
+<p>Определить количество введенных простых чисел</p>
+<p><br>Алгоритм решения задачи:</p><br>
+<p>1 .Пока не будет введено число меньшее или равное 1 (т.к. простым числом может быть только натуральное число большее единицы) будем выполнять нижеследующие действия.</p>
+<p>2. Установим флаговую переменную в значение True.</p>
+<p>3. Проверим число на простоту путем деления на него всех целых чисел от 2 до корня из него (почему именно до корня см. математику).</p>
+<p>4. Если число делится нацело хотя бы на один делитель, то оно не простое. Меняем значение флаговой переменной на False.</p>
+<p>5. Если же флаговая переменная не была изменена, то число простое, и мы увеличиваем счетчик количества введенных простых чисел.</p>
+<div class="prog" style= "height: 320px">
+<p> <span class="orange">>>></span>import <span class="blue">math</span></p>
+<p> <span class="orange">>>></span>count = 0</p>
+<p> <span class="orange">>>></span>n = int(input())</p>
+<p> <span class="orange">>>></span>while n > 1:</p>
+<p> <span class="orange">>>></span>&emsp;	f = True </p>
+<p> <span class="orange">>>></span>&emsp;	for i in range(2, round(math.sqrt(n))+1):</p>
+<p> <span class="orange">>>></span>&emsp;&emsp;		if n % i == 0:</p>
+<p> <span class="orange">>>></span>&emsp;&emsp;&emsp;			f = False</p>
+<p> <span class="orange">>>></span>&emsp;	if f:</p>
+<p> <span class="orange">>>></span>&emsp;&emsp;		count += 1</p>
+<p> <span class="orange">>>></span>&emsp;	n = int(input())</p>
+<p> <span class="orange">>>></span> print("Было введено", count, "простых чисел")</p>
+ </div>
+ <p>Пример выполнения кода:</p>
+ <div class="prog" style= "height: 320px">
+ <p> 35</p>
+<p> 18</p>
+<p> 10</p>
+<p> 11</p>
+<p> 197</p>
+<p> 3</p>
+<p> 17</p>
+<p> 1</p>
+<p> Было введено 4 простых чисел</p>
+ </div>
+
+<br><br>
+<p>Источник: <a target="_blank" href="https://rtfm.co.ua/books-translations/python_s_nulya/python-s-nulya-chast-5-cikly/python-s-nulya-chast-5-vlozhennye-cikly/">https://rtfm.co.ua/books-translations/python_s_nulya/python-s-nulya-chast-5-cikly/python-s-nulya-chast-5-vlozhennye-cikly</a></p>
+</div>
+	</article>
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

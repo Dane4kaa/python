@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_2.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article>
+
+
+		<aside>
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" class="active">Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html">Массивы</a></li>
+ <li><a href="../Tem_4.html">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+
+	</aside>
+		<div id="main1">
+<h1 id="h11">Цикл с условием. Решение задач</h1><br>
+<p>Рассмотрим цикл <span class="pink_border">while</span> Он имеет следующее формальное определение:</p>
+<div class="prog" style="height: 100px">
+<p><span class="orange">>>></span>while условное_выражение:</p>
+<p><span class="orange">>>></span>&emsp;   инструкции</p>
+</div>
+<p>После ключевого слова <span class="pink_border">while</span >указывается условное выражение, и пока это выражение возвращает значение True, будет выполняться блок инструкций, который идет далее.</p><br>
+<p>Все инструкции, которые относятся к циклу <span class="pink_border">while</span>, располагаются на последующих строках и должны иметь отступ от начала строки.</p><br>
+<div class="prog" style="height: 180px">
+<p><span class="orange">>>></span>choice = "y"</p>
+<p><span class="orange">>>></span>while choice.lower() == "y":</p>
+<p><span class="orange">>>></span>&emsp;     print("Привет")</p>
+<p><span class="orange">>>></span> &emsp;    choice = input("Для продолжения нажмите Y, а для выхода любую другую клавишу: ")</p>
+<p><span class="orange">>>></span>print("Работа программы завешена")</p>
+</div>
+<p>В данном случае цикл while будет продолжаться, пока переменная choice содержит латинскую букву "Y" или "y".</p><br>
+<p>Сам блок цикла состоит из двух инструкций. Сначала выводится сообщение "Привет", а потом вводится новое значение для переменной choice. И если пользователь нажмет какую-то другую клавишу, отличную от Y, произойдет выход из цикла, так как условие choice.lower() == "y" вернет значение False. Каждый такой проход цикла называется итерацией.</p><br>
+<p>Также обратите внимание, что последняя инструкция print("Работа программы завешена") не имеет отступов от начала строки, поэтому она не входит в цикл while.</p><br>
+<p>Дугой пример - вычисление факториала:</p><br>
+<div class="prog" style="height: 230px">
+<p><span class="orange">>>></span><span class="grey">#! Программа по вычислению факториала</span></p>
+<p><span class="orange">>>></span> number = int(input("Введите число: "))</p>
+<p><span class="orange">>>></span>i = 1</p>
+<p><span class="orange">>>></span>factorial = 1</p>
+<p><span class="orange">>>></span>while i &lt;= number:</p>
+<p><span class="orange">>>></span> &emsp;    factorial *= i</p>
+<p><span class="orange">>>></span> &emsp;    i += 1</p>
+<p><span class="orange">>>></span>print("Факториал числа", number, "равен", factorial)</p>
+</div>
+<p>Здесь вводит с консоли некоторое число, и пока число-счетчик i не будет больше введенного числа, будет выполняться цикл, в котором происходит умножения числа factorial.</p><br>
+<p>Консольный вывод:</p><br>
+<div class="prog" style="height: 100px">
+<p>Введите число: 6</p>
+<p>Факториал числа 6 равен 720</p>
+</div><br><br>
+<p> Источники: <a  target="_blank" href="https://metanit.com/python/tutorial/2.7.php"> https://metanit.com/python/tutorial/2.7.php</a></p>
+<a  target="_blank" href="http://pythontutor.ru/lessons/for_loop/"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; http://pythontutor.ru/lessons/for_loop/</a>
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+
+	</footer>
+</body>
+</html>

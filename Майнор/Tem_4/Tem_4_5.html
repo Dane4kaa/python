@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="Stylesheet" type="text/css" href="../Themes.css" />
+<link rel="Stylesheet" type="text/css" href="Tem_4.css" />
+<title>Python</title>
+</head>
+
+<body>
+
+
+	<header>
+		<div><img src="../images/logo1.png" alt="" class="logo">
+		<nav>
+				<a href="../main1.html">о Python</a>
+				<a href="../Izuchenie_Python.html">изучение Python </a>
+				<a href="../Tem_1/Tem_1_1.html">установка ПО</a>
+		</nav></div>
+	</header>
+	<hr>
+
+
+
+		<article style="height: 1600px">
+
+
+		<aside style="height: 1600px">
+		<form>
+  <input type="text" placeholder="Поиск по сайту">
+  <button type="submit"><img src="../images/search.png" alt=""></button>
+</form>
+
+<nav id="n1">
+ <ul>
+ <li><a href="../Tem_1.html" >Основы программирования на Python</a></li>
+ <li><a href="../Tem_2.html" >Основные управляющие конструкции</a></li>
+ <li><a href="../Tem_3.html" >Массивы</a></li>
+ <li><a href="../Tem_4.html" class="active">Процедуры, функции. Основы обработки строк</a></li>
+ <li><a href="../Tem_5.html">Файлы. Словари. Множества</a></li>
+ <li><a href="../Tem_6.html">Пользовательский интерфейс</a></li>
+</ul>
+</nav>
+
+<nav id="n2">
+ <ul>
+ <li><a href="../Upr.html">Упражнения</a></li>
+</ul>
+</nav>
+
+<nav id="n3">
+<ul>
+ <li><a href="../Books.html">Книги о Python</a></li>
+ <li><a href="../Curses.html">Курсы Python</a></li>
+ <li><a href="../Video.html">Видеоуроки Python</a></li>
+</ul>
+</nav>
+
+	</aside>
+		<div id="main1">
+<h1><span>Рекурсивные алгоритмы</span> </h1>
+<br><p>Функции могут вызывать и другие функции, и даже вызывать сами себя!
+Рассмотрим это на примере функции вычисления факториала. Хорошо известно, что <span class="pink">0!=1, 1!=1.</span>
+А как вычислить величину <span class="blue">n!</span> для большого <span class="blue">n</span>?
+Если бы мы могли вычислить величину <span class="blue">(n−1)!</span>, то тогда мы легко вычислим <span class="blue">n!</span>, поскольку <span class="blue">n!=n(n−1)!</span>.
+Но как вычислить <span class="blue">(n−1)!?</span> Если бы мы вычислили <span class="blue">(n−2)!</span>, то мы сможем вычисли и <span class="blue">(n−1)!=(n−1)(n−2)!</span>.
+А как вычислить <span class="blue">(n−2)!?</span> Если бы… В конце концов, мы дойдем до величины <span class="blue">0!</span>, которая равна <span class="pink">1</span>.
+Таким образом, для вычисления факториала мы можем использовать значение факториала для меньшего числа.
+Это можно сделать и в программе на Питоне:</p>
+<div class="prog" style="height: 160px">
+<p>def factorial(n):</p>
+<p>    if n == 0:</p>
+<p>        return 1</p>
+<p>    else:</p>
+<p>        return n * factorial(n - 1)</p>
+</div>
+
+<br><p>Подобный прием <span class="grey">(вызов функцией самой себя)</span> называется рекурсией, а сама функция называется рекурсивной.
+Как это работает? Допустим, мы вызвали функцию <span class="blue">factorial(4)</span>. Будет вызвана функция,
+у которой значение параметра <span class="pink">n==4</span>.
+Она проверит условие <span class="pink">n==0</span>, поскольку условие ложно, то будет выполнена инструкция <span class="blue">return n∗factorial(n−1)</span>.
+Но чтобы вычислить это значение, будет вызвана функция <span class="blue">factorial(3)</span>, т. к.
+параметр <span class="pink">n</span> имеет значение, равное <span class="pink">4</span>.
+Теперь в памяти будет находиться две функции <span class="blue">factorial</span> — одна со значением параметра
+<span class="pink">n==4</span>, а другая — <span class="pink">n==3</span>.
+При этом активна будет последняя функция.
+Эта функция в свою очередь вызовет функцию <span class="blue">factorial(2)</span>, та вызовет функцию <span class="blue">factorial(1)</span>,
+затем <span class="blue">factorial(0)</span>. В случае этой функции ничего более вызвано не будет,
+функция просто вернет значение <span class="pink">1</span>, и управление вернется в функцию <span class="blue">factorial(1)</span>.
+Та умножит значение <span class="pink">n==1 </span>на значение <span class="pink">1</span>, которое вернула функция <span class="blue">factorial(0)</span>,
+и вернет полученное произведение, равное <span class="pink">1</span>.
+Управление вернется в функцию <span class="blue">factorial(2)</span>, которая умножит <span class="pink">n==2</span> на значение <span class="pink">1</span>,
+которое вернула функция <span class="blue">factorial(1)</span> и вернет полученное произведение, равное <span class="pink"> 2</span>.
+Функция <span class="blue">factorial(3)</span> вернет <span class="pink">3*2==6</span>, а функция <span class="blue">factorial(4)</span>
+ вернет <span class="pink">4*6==24</span>.
+Значения функции возвращают в порядке, обратном порядке их вызова,
+то есть сначала заканчивает работу функция <span class="blue">factorial(0)</span>, затем <span class="blue">factorial(1)</span> и т. д.
+<br><p>При отладке программы всю последовательность вложенных вызовов рекуррентных функций можно изучить
+в окне <span class="pink">«Call Stack» </span>(«стек вызовов») в режиме отладки среды <span class="pink">Wing IDE</span>.
+При этом значения локальных переменных будут отображаться в окне <span class="pink">«Stack data»</span>, и для каждой вызываемой функции
+ значения локальных переменных будут своими.
+<br><br><p>Для того, чтобы реализовать рекурсию нужно ответить на следующие вопросы:</p>
+<div class="spisok" style="height: 80px">
+<p>1.Какой случай <span class="grey">(для какого набора параметров)</span> будет крайним <span class="grey">(простым)</span> и что функция возвращает в этом случае?</p>
+<p>2.Как свести задачу для какого-то набора параметров <span class="grey">(за исключением крайнего случая)</span> к задаче, для другого набора параметров
+ <span class="grey">(как правило, с меньшими значениями)</span>?</p>
+ </div>
+<br><br><p>При этом программирование рекурсии выглядит так. Функция должна сначала проверить, не является ли переданный набор параметров простым <span class="grey">(крайним)</span> случаем.
+В этом случае функция должна вернуть значение <span class="grey">(или выполнить действия)</span>, соответствующие простому случаю.
+Иначе функция должна вызвать себя рекурсивно для другого набора параметров, и на основе полученных значений
+вычислить значение, которое она должна вернуть.
+Рассмотрим несколько примеров <span class="grey">(на самом деле эти примеры являются «учебными» и все перечисленные задачи гораздо лучше решать
+при помощи циклов, а не рекурсией)</span>.
+
+<br><br><p><span class="opredelenia">Функции</span> — это такие участки кода, которые изолированы от остальный программы и выполняются только тогда, когда вызываются.
+Вы уже встречались с функциями <span class="pink">sqrt(), len() и print()</span>. Они все обладают общим свойством: они могут принимать параметры (ноль, один или несколько), и они могут возвращать значение (хотя могут и не возвращать).
+Например, функция <span class="pink">sqrt()</span> принимает один параметр и возвращает значение (корень числа). Функция <span class="pink">print()</span> принимает переменное число параметров и ничего не возвращает.
+Покажем, как написать функцию <span class="blue">factorial()</span>, которая принимает один параметр — число, и возвращает значение — факториал этого числа.</p>
+<div class="prog" style="height: 240px">
+<p>def factorial(n):</p>
+ <p>   res = 1</p>
+<p>    for i in range(1, n + 1):</p>
+<p>        res *= i</p>
+<p>    return res</p>
+<p>print(factorial(3))</p>
+<p>print(factorial(5)</p>
+</div>
+
+<br><p>Источникu:
+<p>1.<a target="_blank" href="https://foxford.ru/wiki/informatika/rekursiya-v-python">https://foxford.ru/wiki/informatika/rekursiya-v-python</a></p>
+<p>2.<a target="_blank" href="http://pythontutor.ru/lessons/functions/">http://pythontutor.ru/lessons/functions/</a></p>
+</div>
+	</article>
+
+
+
+
+
+			<footer>	<div><img src="../images/logofooter.png" alt="" class="logo">
+		<p>Ниу ВШЭ (СПб) 2021</p></div>
+
+	</footer>
+</body>
+</html>
